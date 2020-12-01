@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_232933) do
+ActiveRecord::Schema.define(version: 2020_12_01_005109) do
 
   create_table "achievements", force: :cascade do |t|
     t.string "next_badge_achievement"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_232933) do
     t.integer "car_id", null: false
     t.text "content"
     t.integer "rating"
+    t.integer "likes"
     t.index ["car_id"], name: "index_reviews_on_car_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
