@@ -1,3 +1,26 @@
 <h1><%= @user.name %></h1>
 
+
+<!-- User Nav Bar -->
+<%= link_to "Log Out", logout_path, method: :delete %>
+<br>
 <%= link_to 'Back to Home Page', home_main_path %>
+<br>
+<%= link_to 'Achievements', achievement_path(@user) %>
+<br>
+<%= link_to 'Favorites', favorite_path(@user) %>
+<br>
+<%= link_to 'Search Cars', make_index_path %>
+<br>
+<%= link_to 'Delete Account', delete_user_path(@user) %>
+<br>
+<%= link_to 'Add A Review', new_review_path %>
+<!-- Avatar Picture -->
+
+<!-- Username  -->
+
+<!-- Three Recent Reviews -->
+
+<!-- View All Reviews Button -->
+
+<!-- Footer Backsplash Image -->

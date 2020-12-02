@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(version: 2020_12_01_222125) do
   end
 
   create_table "cars", force: :cascade do |t|
-    t.string "manufacturer"
+    t.string "make"
     t.string "model"
+    t.integer "rating"
     t.text "description"
   end
 
