@@ -1,0 +1,22 @@
+<h1>Login Page</h1>
+
+    
+    <%= form_for :session, url: login_path do |f| %>
+        <% if flash[:login_errors] %>
+            <%= flash[:login_errors] %>
+        <% end %>
+        <br>
+        <br>
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+        <br>
+        <br>
+        <%= f.label :password %>
+        <%= f.text_field :password %>
+        <br>
+        <br>
+        <%= f.submit 'Log In' %>
+
+    <% end %>
+
+    <%= link_to 'Return to Home Page', home_main_path %>

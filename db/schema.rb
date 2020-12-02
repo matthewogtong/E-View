@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_01_005109) do
+ActiveRecord::Schema.define(version: 2020_12_01_222125) do
 
   create_table "achievements", force: :cascade do |t|
     t.string "next_badge_achievement"
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 2020_12_01_005109) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "username"
-    t.string "password"
     t.integer "age"
+    t.string "password_digest"
   end
 
   add_foreign_key "reviews", "cars"
