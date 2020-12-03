@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   #Car Endpoints
   get '/cars/makes', to: 'cars#make_index', as: 'make_index'
-  get '/cars/models', to: 'cars#model_index', as: 'model_index'
+  get '/cars/:id/models', to: 'cars#model_index', as: 'model_index'
   resources :cars, only: [:show]
   
   #User Endpoints

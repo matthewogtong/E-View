@@ -1,4 +1,4 @@
-<h1>New Review</h1>
+<h1>Make A Car Review</h1>
 
 <%= form_for @review do |f| %>
 
@@ -7,10 +7,15 @@
             <p><%= error %></p>
         <% end %>
     <% end %>
-    <%= f.label :content %><br>
-    <%= f.text_field :content %><br>
-    <%= f.label "Car Manufacturer" %><br>
-    <%= f.collection_select(:car_id, Car.all, :make, :model, {:prompt => "please select a model"}, {:multiple => true})%><br>
-    <%= f.submit%>
+<b> <%= f.label "Select A Car" %><br></b> 
+    <%= f.collection_select :car_id, Car.all, :id, :make_plus_model %><br>
+    <br>
+    <%= f.label 'Rating' %>
+    <%= f.number_field :rating %>
+    <br>
+    <b><%= f.label :content %><br></b>
+    <%= f.text_area :content %><br>
+    <br>
+    <%= f.submit %>
 <% end %>
 

@@ -8,19 +8,16 @@ class ReviewsController < ApplicationController
     end
 
     def create
-        @review = Review.create(review_params)
-        if @review.valid?
-          redirect_to review_path(@review)
-        else
-          flash[:review_errors] = @review.errors.full_messages
-          redirect_to new_review_path
-         end
+        @review = @current_user.reviews << Review.create(review_params)
+
+        redirect_to review_path(review_params[:car_id])
+        
     end
 
     private
 
     def review_params
-        params.require(:review).permit(:user_id, :car_id, :content, :rating, :likes)
+        params.require(:review).permit(:car_id, :content, :rating, :likes)
     end
 
 

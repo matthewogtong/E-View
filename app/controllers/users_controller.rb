@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    skip_before_action :authorized, only: [:new, :create]
     before_action :find_user, only: [:show, :edit, :update]
 
     def home
@@ -46,6 +47,7 @@ class UsersController < ApplicationController
     end
 
     def delete_user
+        @user = User.find(params[:id])
     end
 
     def destroy
