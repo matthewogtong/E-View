@@ -4,7 +4,21 @@
 Car:
 <%= @car.make %>
 <br>
+<%= @car.model %>
+<br>
+
 
 <%= link_to 'Car Review', review_path(@car) %>
-
+<br>
+<hr>
 <%= link_to 'Back to Home Page', home_main_path %>
+<br>
+<hr>
+<b>
+<% if flash[:favorited] %>
+    <% flash[:favorited] %>
+<% else %>
+    <% flash[:favorite_error] %>
+<% end %>
+</b>
+<%= button_to 'Add to Favorites', add_to_favorites_path, method: :patch %>

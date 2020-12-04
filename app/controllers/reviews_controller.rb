@@ -9,8 +9,9 @@ class ReviewsController < ApplicationController
 
     def create
         @review = @current_user.reviews << Review.create(review_params)
-
-        redirect_to review_path(review_params[:car_id])
+        @recent_review = @review.last
+        
+        redirect_to review_path(@recent_review.id)
         
     end
 

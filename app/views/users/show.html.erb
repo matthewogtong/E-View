@@ -18,9 +18,24 @@
 <!-- Avatar Picture -->
 
 <!-- Username  -->
+<h3><%=@user.username %></h3>
 
 <!-- Three Recent Reviews -->
+<h3>
+    <% @recent_reviews.each do |review| %>
+        <%= review.car.make%>
+        <%= review.car.model %>
+        <br>
+        Rating:<%= review.rating %>
+        <br>
+       Content: <%= review.content %>
+        <%= review.likes %>
+        <br>
+        <hr>
+    <% end %>
+</h3>
 
 <!-- View All Reviews Button -->
+<%= button_to "View All Reviews", user_reviews_path, method: :get %>
 
 <!-- Footer Backsplash Image -->

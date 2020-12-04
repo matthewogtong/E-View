@@ -1,3 +1,16 @@
-<h1>    Achievement Show Page </h1>
+<h1>  <%= @user.name %>'s' Achievement Show Page </h1>
 
-<%= link_to 'Back to Profile', user_path(@user) %>
+
+
+
+<h3>Current Badge: <%= @achievements.badge %></h3>
+<h3>Next badge: <%= @achievements.next_badge_achievement %></h3>
+
+
+
+<p>How many users liked your reviews:</p>
+<h3>Points: <%= @achievements.points %></h3>
+
+<%= link_to 'Return to Profile', user_path(@user) %>
+
+<%= button_to "View All Reviews", user_reviews_path, method: :get %>

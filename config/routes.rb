@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   #Car Endpoints
   get '/cars/makes', to: 'cars#make_index', as: 'make_index'
-  get '/cars/:id/models', to: 'cars#model_index', as: 'model_index'
+  get '/cars/:make/models', to: 'cars#model_index', as: 'model_index'
   resources :cars, only: [:show]
   
   #User Endpoints
@@ -18,12 +18,14 @@ Rails.application.routes.draw do
   resources :users
 
   #Achievement Endpoints
-  resources :achievements
+  resources :achievements, only: [:show]
 
   #Favorite Endpoints
-  resources :favorites
+  patch '/favorites/add', to: 'favorites#add_to_favorites', as: 'add_to_favorites'
+  resources :favorites, only: [:show]
 
   #Review Endpoints
+  get '/user/:id/reviews', to: 'users#user_reviews', as: 'user_reviews'
   resources :reviews
   
 end

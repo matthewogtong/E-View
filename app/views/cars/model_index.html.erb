@@ -1,10 +1,6 @@
 <h1>Models</h1>
-
-<ul>
-  <% @cars_make.each do |car| %>
-    <li><%= link_to car.model, car_path(car) %></li>
+<h2>
+  <% @cars.each do |car| %>
+    <%= car %><br>
   <% end %>
-</ul>
-<%= link_to 'Back to Manufacturers', make_index_path %>
-<br>
-<%= link_to 'Back to Home Page', home_main_path %>
+</h2>

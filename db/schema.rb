@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_01_222125) do
+ActiveRecord::Schema.define(version: 2020_12_04_003119) do
 
   create_table "achievements", force: :cascade do |t|
     t.string "next_badge_achievement"
-    t.string "next_point_achievement"
-    t.string "badges"
+    t.string "badge"
     t.integer "points"
+    t.integer "user_id"
   end
 
   create_table "cars", force: :cascade do |t|

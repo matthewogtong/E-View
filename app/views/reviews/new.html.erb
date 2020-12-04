@@ -7,11 +7,11 @@
             <p><%= error %></p>
         <% end %>
     <% end %>
-<b> <%= f.label "Select A Car" %><br></b> 
+    <b> <%= f.label "Select A Car" %><br></b> 
     <%= f.collection_select :car_id, Car.all, :id, :make_plus_model %><br>
     <br>
-    <%= f.label 'Rating' %>
-    <%= f.number_field :rating %>
+    <b><%= f.label 'Rating' %></b>
+    <%= f.select :rating, (0..10) %>
     <br>
     <b><%= f.label :content %><br></b>
     <%= f.text_area :content %><br>

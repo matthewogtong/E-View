@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     end
 
     def show
+        @recent_reviews = @current_user.reviews.last(3)
     end
 
     def new
@@ -23,6 +24,7 @@ class UsersController < ApplicationController
 
     def create
         user = User.create(user_params)
+        Achievement.create(next_badge_achievement: "", badge: "", points: 0, user_id: user.id)
 
         if user.valid?
             cookies[:user_id] = user.id
@@ -55,6 +57,11 @@ class UsersController < ApplicationController
         @user.destroy
   
         redirect_to home_main_path
+    end
+
+    def user_reviews
+        @user = User.find(params[:id])
+        @reviews = @current_user.reviews
     end
     
     private

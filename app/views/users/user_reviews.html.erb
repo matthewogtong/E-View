@@ -1,0 +1,20 @@
+<h1>All Your Reviews</h1>
+
+<ul>
+    <% @reviews.each do |review| %>
+        <%= link_to 'View this Review', review_path(review.id) %>
+        <br>
+        <%= review.car.make%>
+        <%= review.car.model %>
+        <br>
+        Rating:<%= review.rating %>
+        <br>
+       Content: <%= review.content %>
+        <%= review.likes %>
+        <br>
+        <br>
+        <br>
+    <% end %>
+</ul>
+
+<%= link_to 'Return to Profile Page', user_path() %>

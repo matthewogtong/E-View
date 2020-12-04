@@ -1,9 +1,9 @@
 require 'faker'
-
-User.destroy_all 
+Achievement.destroy_all
+# User.destroy_all 
 Review.destroy_all
 Car.destroy_all
-# Favorite.destroy_all
+Favorite.destroy_all
 # Achievement.destroy_all
 
 
@@ -15,9 +15,9 @@ Car.destroy_all
 # end
 
 Car.create!(
-        make:'Honda', 
-        model: 'Civic',
-        description: 'R - Type'   
+    make:'Honda', 
+    model: 'Civic',
+    description: 'R - Type'   
 )
 
 Car.create!(
