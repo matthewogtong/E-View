@@ -1,21 +1,13 @@
 <h1> Car Show Page </h1>
 
-
-Car:
-<%= @car.make %>
-<br>
-<%= @car.model %>
-<br>
-
-
-<%= link_to 'Car Review', review_path(@car) %>
-<br>
-<hr>
+<!-- Nav Bar -->
 <%= link_to 'Back to Home Page', home_main_path %>
 <br>
 <hr>
-
-<%= button_to 'Add to Favorites', add_to_favorites_path, method: :post%>
+<%= button_to 'View All Reviews For This Car', car_reviews_path(@car.id), method: :get %>
+<hr>
+<br>
+<%= button_to 'Add to Favorites', add_to_favorites_path(@car.id), method: :post %>
 <b>
 <% if flash[:favorited] %>
     <%= flash[:favorited] %>
@@ -23,3 +15,20 @@ Car:
     <%= flash[:favorite_error] %>
 <% end %>
 </b>
+
+<!--  Car Make + Model --->
+Car:
+<%= @car.make %>
+<br>
+<%= @car.model %>
+<br>
+
+<!-- Car Image-->
+
+
+<!-- Average Rating-->
+
+
+<!-- Car Description-->
+
+

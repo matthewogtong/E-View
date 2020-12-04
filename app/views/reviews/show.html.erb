@@ -1,4 +1,13 @@
 <h1> Car Review Show Page </h1> 
+
+<!-- Nav Bar -->
+<%= link_to 'Return back to Car Show Page', car_path(@review.car) %>
+<br>
+<%= link_to 'Back to Profile', user_path(@review.user_id) %>
+<br>
+<%= link_to 'Back to Home', home_main_path %>
+
+
 <h3><%= @review.car.make %></h3>
 <h3><%= @review.car.model %></h3>
 <h3><%= @review.content %></h3>
@@ -6,6 +15,3 @@
 <br>
 
 
-<%= link_to 'Back to Profile', user_path(@review.user_id) %>
-<br>
-<%= link_to 'Back to Home', home_main_path %>

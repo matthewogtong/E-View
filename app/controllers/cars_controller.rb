@@ -9,21 +9,15 @@ class CarsController < ApplicationController
     end
 
     def model_index
-        
-        @cars = Car.all.map{|car| car.model}.uniq
-        
-        # @cars = Car.all.map{|car| car.model}.uniq
+        @cars = Car.where(make: params[:make])
+    end
 
-        # @car_make = Car.find(params[:make])
-        # @cars = Car.all
-        # @cars.select 
+    def car_reviews
+        @car = Car.find_by(id: params[:car_id])
     end
 
     private
 
-    # def car_params
-    #     params.require(:car).permit(:make, :model, :rating, :description)
-    # end
 
     
 end

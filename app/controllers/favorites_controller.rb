@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
 
     def add_to_favorites
         user = @current_user
-        @car = Car.find_by(params[:id])
+        @car = Car.find_by(id: params[:car_id])
         new_favorite = Favorite.new(user_id: user.id, car_id: @car.id)
         if new_favorite.valid?
             new_favorite.save

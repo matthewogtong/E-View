@@ -1,0 +1,12 @@
+<h1>All Reviews For <%= @car.make_plus_model  %></h1>
+
+<% @car.reviews.each do |review| %>
+    <li>
+    <%= link_to 'View this Review', review_path(@car) %>
+    <%= review.content %>
+    <%= review.rating %>
+    <%= review.likes %>
+    </li>
+<% end %>
+
+<%= link_to 'Return to Car Show Page', car_path(@car) %>

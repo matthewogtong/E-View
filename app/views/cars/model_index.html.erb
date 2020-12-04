@@ -1,6 +1,6 @@
 <h1>Models</h1>
 <h2>
   <% @cars.each do |car| %>
-    <%= car %><br>
+    <%= link_to car.model, car_path(car)%><br>
   <% end %>
 </h2>
