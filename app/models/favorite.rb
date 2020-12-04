@@ -6,5 +6,5 @@ class Favorite < ApplicationRecord
     validates :user_id, presence: true
     validates :car_id, presence: true
     validates :car_id, uniqueness: true
-
-end
+    
+end # end of class

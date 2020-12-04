@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 
         if user && user.authenticate(params[:session][:password])
             cookies[:user_id] = user.id
-            redirect_to home_main_path
+            redirect_to user_path(user)
         else
             flash[:login_errors] = "Username or Password is incorrect"
             redirect_to new_login_path

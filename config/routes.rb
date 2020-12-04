@@ -15,14 +15,14 @@ Rails.application.routes.draw do
   
   #User Endpoints
   get '/user/:id/delete', to: 'users#delete_user', as: 'delete_user'
+  get '/user/:id/favorites', to: 'users#user_favorites', as: 'user_favorites'
   resources :users
 
   #Achievement Endpoints
   resources :achievements, only: [:show]
 
   #Favorite Endpoints
-  patch '/favorites/add', to: 'favorites#add_to_favorites', as: 'add_to_favorites'
-  resources :favorites, only: [:show]
+  post '/favorites/add', to: 'favorites#add_to_favorites', as: 'add_to_favorites'
 
   #Review Endpoints
   get '/user/:id/reviews', to: 'users#user_reviews', as: 'user_reviews'

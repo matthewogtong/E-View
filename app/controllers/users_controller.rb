@@ -63,6 +63,12 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         @reviews = @current_user.reviews
     end
+
+    def user_favorites
+        @user = @current_user
+
+        
+    end
     
     private
 

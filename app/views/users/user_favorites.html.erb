@@ -1,0 +1,13 @@
+<h1>  Favorites Show Page </h1>
+
+<ul>
+    <% @user.favorites.each do |f| %>
+        <li>
+        <%= f.car.make  %> <br>
+        <%= f.car.model %>
+        </li>
+    <% end %>
+</ul>
+
+
+<%= link_to 'Back to Profile', user_path(@user) %>

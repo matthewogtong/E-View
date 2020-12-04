@@ -14,11 +14,12 @@ Car:
 <%= link_to 'Back to Home Page', home_main_path %>
 <br>
 <hr>
+
+<%= button_to 'Add to Favorites', add_to_favorites_path, method: :post%>
 <b>
 <% if flash[:favorited] %>
-    <% flash[:favorited] %>
+    <%= flash[:favorited] %>
 <% else %>
-    <% flash[:favorite_error] %>
+    <%= flash[:favorite_error] %>
 <% end %>
 </b>
-<%= button_to 'Add to Favorites', add_to_favorites_path, method: :patch %>
