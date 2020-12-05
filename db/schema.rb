@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_003119) do
   create_table "cars", force: :cascade do |t|
     t.string "make"
     t.string "model"
-    t.integer "rating"
+    t.float "rating"
     t.text "description"
   end
 
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 2020_12_04_003119) do
     t.integer "user_id", null: false
     t.integer "car_id", null: false
     t.text "content"
-    t.integer "rating"
-    t.integer "likes"
+    t.float "rating"
+    t.integer "likes", default: 0
     t.index ["car_id"], name: "index_reviews_on_car_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end

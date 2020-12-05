@@ -3,8 +3,6 @@ class Car < ApplicationRecord
     has_many :favorites
     has_many :users, through: :reviews
     # has_many :users, through: :favorites
-    
-    
 
     def make_plus_model
         "#{self.make} - #{self.model}"

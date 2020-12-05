@@ -2,8 +2,9 @@ class Achievement < ApplicationRecord
     belongs_to :user
     has_many :reviews, through: :user
 
+
     def badges
-        if self.user.reviews.count == 0
+        if self.user.reviews.count < 5
             self.badge = "You are Nothing"
             self.next_badge_achievement = "Youngling"
         elsif self.user.reviews.count >= 5 && self.user.reviews.count < 15
@@ -20,12 +21,4 @@ class Achievement < ApplicationRecord
             self.next_badge_achievement = "You are too experienced"
         end
     end
-    
-
-    def points
-        
-    end
-
-
-
 end #end of class

@@ -25,7 +25,6 @@ class UsersController < ApplicationController
     def create
         user = User.create(user_params)
         Achievement.create(next_badge_achievement: "", badge: "", points: 0, user_id: user.id)
-
         if user.valid?
             cookies[:user_id] = user.id
             redirect_to user_path(user)
@@ -67,7 +66,7 @@ class UsersController < ApplicationController
     def user_favorites
         @user = @current_user
 
-        
+
     end
     
     private

@@ -1,17 +1,22 @@
 <h1> Car Review Show Page </h1> 
 
 <!-- Nav Bar -->
-<%= link_to 'Return back to Car Show Page', car_path(@review.car) %>
+<%= link_to 'Return to Car Show Page', car_path(@review.car) %>
 <br>
-<%= link_to 'Back to Profile', user_path(@review.user_id) %>
+<%= link_to 'Profile', user_path(@review.user_id) %>
 <br>
-<%= link_to 'Back to Home', home_main_path %>
+<%= link_to 'Home', home_main_path %>
 
 
-<h3><%= @review.car.make %></h3>
-<h3><%= @review.car.model %></h3>
-<h3><%= @review.content %></h3>
-<h3><%= @review.rating %></h3>
+<h3>Make: <%= @review.car.make %></h3>
+<h3>Model: <%= @review.car.model %></h3>
+<h3>Review: <%= @review.content %></h3>
+<h3>Rating: <%= @review.rating %></h3>
 <br>
 
-
+<!-- like button -->
+<h4>Current Upvotes: <%= @review.likes %></h4>
+<% if flash[:like_error] %>
+    <h5><%= flash[:like_error] %> </h5>
+<% end %>
+<%= button_to 'Upvote', add_a_like_path(@review), method: :patch%>

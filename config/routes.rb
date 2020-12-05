@@ -26,7 +26,11 @@ Rails.application.routes.draw do
   post '/favorites/:car_id/add', to: 'favorites#add_to_favorites', as: 'add_to_favorites'
 
   #Review Endpoints
+  patch '/reviews/:id/add_like', to: 'reviews#add_a_like', as: 'add_a_like'
+
   get '/user/:id/reviews', to: 'users#user_reviews', as: 'user_reviews'
   resources :reviews
+
+
   
 end

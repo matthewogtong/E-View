@@ -3,7 +3,7 @@ class CreateCars < ActiveRecord::Migration[6.0]
     create_table :cars do |t|
       t.string :make
       t.string :model
-      t.integer :rating 
+      t.float :rating
       t.text :description
     end
   end
