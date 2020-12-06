@@ -18,17 +18,17 @@
         <% end %>
     <% end %>
     <div class="sign-up-text">
-    <%= f.text_field :name %>
-    <%= f.text_field :username %>   
-    <%= f.password_field :password, class: 'passwordf' %>
-    <%= f.number_field :age %>
+    <%= f.text_field :name, class: 'text_field_form' %>
+    <%= f.text_field :username, class: 'text_field_form' %>   
+    <%= f.password_field :password, class: 'text_field_form' %>
+    <%= f.number_field :age, class: 'text_field_form' %>
     <%= f.submit "SUBMIT"%>
     </div>
 <% end %>
     <div class="already_have_an_account">
         <h3>Already have an account? <%= link_to 'Login', new_login_path %></h3>
     </div>
-        <%= link_to 'Return Home', home_main_path %>
+        <%= link_to 'Return Home', home_main_path, class: 'dont_have_an_account_return_home' %>
 </div>
 
 

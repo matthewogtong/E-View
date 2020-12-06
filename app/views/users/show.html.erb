@@ -31,8 +31,37 @@
 <body> <img class ="profile_img" src= "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/baby-monkey-silvio-schoisswohl.jpg"> </body>
 
 
-<br>
 <!-- Three Recent Reviews -->
+
+
+<div class="card-deck">
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Review 1</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Review 2</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Review 3</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+
+
 <br>
 <h4 class= "recent-reviews">
   <u>Your Recent Reviews:</u> <br>
@@ -48,12 +77,22 @@
        Likes: <%= review.likes %>
         <br>
         <br>
-    <% end %> 
+    <%end %>
 </h4>
+</body
 
-</body>
-<!-- View All Reviews Button -->
+
+<%# <!-- View All Reviews Button  --> %>
 <div class= "view-button">
 <%= button_to "View All Reviews", user_reviews_path, method: :get %>
 </div>
 <!-- Footer Backsplash Image -->
+
+
+
+
+
+
+
+
+

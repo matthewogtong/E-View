@@ -14,8 +14,8 @@
             <%= flash[:login_errors] %>
         <% end %>
         <div class="log-in-text">
-        <%= f.text_field :username %>
-        <%= f.text_field :password %>
+        <%= f.text_field :username, class: 'text_field_form' %>
+        <%= f.text_field :password, class: 'text_field_form'  %>
         <%= f.submit id="Log In" %>
     </div>
 
