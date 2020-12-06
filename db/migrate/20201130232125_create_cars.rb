@@ -5,6 +5,7 @@ class CreateCars < ActiveRecord::Migration[6.0]
       t.string :model
       t.float :rating
       t.text :description
+      t.string :image
     end
   end
 end

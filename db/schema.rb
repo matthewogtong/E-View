@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_003119) do
     t.string "model"
     t.float "rating"
     t.text "description"
+    t.string "image"
   end
 
   create_table "favorites", force: :cascade do |t|
