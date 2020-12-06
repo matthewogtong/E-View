@@ -1,95 +1,91 @@
 <!-- Banner -->
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Welcome Back,<%= @user.name %></h1>
-    <p class="lead"></p>
-  </div>
-</div>
-   
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Profile</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" <%= link_to "Log Out", logout_path, method: :delete %> <span class="sr-only">(current)</span></a>
-        <a class="nav-link" <%= link_to 'Home', home_main_path(@current_user) %></a> 
-        <a class="nav-link" <%= link_to 'Achievements',  achievement_path(@current_user) %></a>
-        <a class="nav-link" <%= link_to 'Favorites',  user_favorites_path(@current_user) %> <span class="sr-only">(current)</span></a>
-        <a class="nav-link" <%= link_to 'Search Cars', make_index_path %></a>
-        <a class="nav-link" <%= link_to 'Delete Account', delete_user_path(@current_user) %></a>
-        <a class="nav-link" <%= link_to 'Add A Review', new_review_path %></a>
+<div class="parent_profile_page">
+  <div class="banner"> 
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Welcome Back, <%= @user.name.downcase %></h1>
+          <p class="lead"></p>
       </div>
     </div>
-  </nav>
-  <h1> &nbsp <%=@user.username %>:</h1>
-
-<!-- Avatar Picture -->
-
-
-<body> <img class ="profile_img" src= "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/baby-monkey-silvio-schoisswohl.jpg"> </body>
-
-
-<!-- Three Recent Reviews -->
-
-
-<div class="card-deck">
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Review 1</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
+  <div class="navbar"> 
+    <h3>Profile</h3>
+    <nav class="nav">
+      <a class="nav-link" <%= link_to "Log Out", logout_path, method: :delete %></a>
+      <a class="nav-link" <%= link_to 'Home', home_main_path(@current_user) %></a>
+      <a class="nav-link" <%= link_to 'Achievements',  achievement_path(@current_user) %></a>
+      <a class="nav-link" <%= link_to 'Favorites',  user_favorites_path(@current_user) %></a>
+      <a class="nav-link" <%= link_to 'Search Cars', make_index_path %></a>
+      <a class="nav-link" <%= link_to 'Add A Review', new_review_path %></a>
+    </nav>
+  </div>
+  <div class="username"> 
+    <h4>username: <span class="badge badge-secondary"><%= @user.username.downcase %></span></h4>
+    <h4>age: <span class="badge badge-secondary"><%= @user.age %></span></h4>
+  </div>
+  <div class="avatar"> 
+    <img src=<%= @user.img_url %> alt="avatar">
+  </div>
+  <div class="three_reviews"> 
+    <h4>your recent reviews <span class="badge badge-secondary"></span></h4>
+    <% if @recent_reviews.first %>
+        <div class="card text-center">
+          <div class="card-header"><%= @recent_reviews.first.car.make_plus_model %></div>
+          <div class="card-body">
+            <h5 class="card-title"><%= @recent_reviews.first.rating.to_s + " / 10.0 " %></h5>
+            <p class="card-text"><%= @recent_reviews.first.content %></p>
+          </div>
+          <div class="card-footer text-muted">
+            <a class="btn btn-primary" <%= link_to 'View more reviews for this car', car_reviews_path(@recent_reviews.first.car) %></a>
+          </div>
+        </div>
+      <% else %>
+        <h2>You don't have any reviews yet. </h2>
+    <% end %>
+    <% if @recent_reviews.second %>
+        <div class="card text-center">
+          <div class="card-header"><%= @recent_reviews.second.car.make_plus_model %></div>
+          <div class="card-body">
+            <h5 class="card-title"><%= @recent_reviews.second.rating.to_s + " / 10.0 "  %></h5>
+            <p class="card-text"><%= @recent_reviews.second.content  %></p>
+          </div>
+          <div class="card-footer text-muted">
+            <a class="btn btn-primary" <%= link_to 'View more reviews for this car', car_reviews_path(@recent_reviews.first.car) %></a>
+          </div>
+        </div>
+    <% end %>
+  </div>
+  <div class="f_a_carousel"> 
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/user_favorites.html.erb" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Review 2</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Review 3</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
+  <div class="footer"> 
   </div>
 </div>
-
-
-<br>
-<h4 class= "recent-reviews">
-  <u>Your Recent Reviews:</u> <br>
-  <br>
-    <% @recent_reviews.each do |review| %>
-        <%= review.car.make%>
-        <%= review.car.model %>
-        <br>
-        Rating:<%= review.rating %>
-        <br>
-       Content: <%= review.content %>
-       <br>
-       Likes: <%= review.likes %>
-        <br>
-        <br>
-    <%end %>
-</h4>
-</body
-
-
 <%# <!-- View All Reviews Button  --> %>
 <div class= "view-button">
 <%= button_to "View All Reviews", user_reviews_path, method: :get %>
 </div>
 <!-- Footer Backsplash Image -->
-
-
-
 
 
 

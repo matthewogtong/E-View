@@ -1,19 +1,19 @@
 require 'faker'
 Achievement.destroy_all
-User.destroy_all 
+# User.destroy_all 
 Review.destroy_all
 Car.destroy_all
 Favorite.destroy_all
 
-# Audi
+# Audi #1
 Car.create!(
     make: "Audi", 
     model: "E-Tron" ,
-    description: "" ,  
+    description: "Audi all wheel drive is sweet" ,  
     image: "https://www.audiusa.com/dam/nemo/us/models/e-tron/e-tron/header-transition/1920x1080/1920x1080_etron-6-min.jpg?output-format=webp&downsize=1920px:*"
 )
 
-# BMW
+# BMW #2
 Car.create!(
     make:"BMW" , 
     model: "i3" ,
@@ -21,7 +21,7 @@ Car.create!(
     image: "https://i0.wp.com/rayhaber.com/wp-content/uploads/2020/06/bmw-i3-elektrikli-surus-keyfini-yuksek-performansla-birlestiriyor.jpg?fit=1424%2C800&ssl=1"
 )
 
-# Chevrolet
+# Chevrolet #3
 Car.create!(
     make:"Chevrolet" , 
     model: "Bolt" ,
@@ -29,15 +29,7 @@ Car.create!(
     image: "https://www.waldorf-chevy.com/assets/shared/CustomHTMLFiles/Responsive/MRP/Chevrolet/2019/Bolt-EV/images/2019-Chevrolet-Bolt-EV-01.jpg"
 )
 
-# Honda
-Car.create!(
-    make:"Honda", 
-    model: "Clarity" ,
-    description: "",  
-    image: "https://media.ed.edmunds-media.com/honda/clarity/2020/oem/2020_honda_clarity_sedan_fuel-cell_fq_oem_7_815.jpg"
-)
-
-# Hyundai
+# Hyundai #4&5
 Car.create!(
     make: "Hyundai", 
     model: "Ioniq" ,
@@ -51,7 +43,7 @@ Car.create!(
     image: "https://cdn.static-carindigo.com/images/content/07fa88a169c392498afaad34d60ecb81.jpeg"
 )
 
-# Jaguar
+# Jaguar #6
 Car.create!(
     make: "Jaguar", 
     model: "I-Pace" ,
@@ -59,7 +51,7 @@ Car.create!(
     image: "https://ev-database.org/img/auto/Jaguar_I-Pace/Jaguar_I-Pace-01.jpg"
 )
 
-# Kia
+# Kia #7&8
 Car.create!(
     make: "Kia", 
     model: "Nira" ,
@@ -74,7 +66,7 @@ Car.create!(
     image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-kia-soul-ev-drive-104-1554317525.jpg"
 )
 
-# Nissan
+# Nissan #9 &10
 Car.create!(
     make: "Nissan", 
     model: "Leaf" ,
@@ -89,7 +81,7 @@ Car.create!(
     image: "https://cnet2.cbsistatic.com/img/446RoFPuMPeuvNtQ9-8urF0Xhv4=/1200x675/2019/04/06/2315f6fd-f122-4df7-8e62-9aedec29c03b/2019-nissan-leaf-plus-27.jpg"
 )
 
-# Porsche
+# Porsche #11
 Car.create!(
     make: "Porsche", 
     model: "Taycan",
@@ -97,7 +89,7 @@ Car.create!(
     image: "https://electrade.app/img/blog/comparison/porsche-taycan-vs-mission-e-concept-comparison-3.png"
 )
 
-# Tesla
+# Tesla #12,13,14
 Car.create!(
     make: "Tesla", 
     model: "Model 3" ,
@@ -117,16 +109,14 @@ Car.create!(
     model: 'Model X',
     description: '',
     image: "https://www.tesla.com/sites/default/files/modelsx-new/social/model-x-social.jpg"
-)
-# Volkswagen
+) 
+# Volkswagen #15
 Car.create!(
     make: 'Volkswagen', 
     model: 'e-Golf' ,
     description: "",  
     image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-volksawagen-e-golf-mmp-1-1569525691.jpg"
 )
-
-
 
 
 

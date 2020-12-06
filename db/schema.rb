@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_003119) do
     t.string "name"
     t.string "username"
     t.integer "age"
+    t.string "img_url"
     t.string "password_digest"
   end
 

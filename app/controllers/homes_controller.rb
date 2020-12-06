@@ -2,9 +2,9 @@ class HomesController < ApplicationController
     skip_before_action :authorized, only: [:main]
 
     def main
-        @car_first = Car.first
-        @car_second = Car.second
-        @car_third= Car.third
-        @car_fourth = Car.fourth
+        @tesla_s = Car.find_by(make: 'Tesla', model: 'Model S')
+        @porsche_taycan = Car.find_by(make: 'Porsche', model: 'Taycan')
+        @audi_etron = Car.find_by(make: 'Audi', model: 'E-Tron')
+        @kia_soul= Car.find_by(make: 'Kia', model: 'Soul')
     end
-end
+end 

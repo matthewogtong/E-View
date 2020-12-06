@@ -3,7 +3,7 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Welcome to E - View</h1>
-    <p class="lead">A Review Webapp for all your favorite EVs</p>
+    <p class="lead">a Review Web app for all your favorite Evs</p>
   </div>
 </div>
 
@@ -51,31 +51,35 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src=<%= @car_first.image%> class="d-block w-100" alt="...">
+      <img src=<%= @tesla_s.image%> class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Tesla S is an amazing vehicle</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <h5><%= @tesla_s.make_plus_model %></h5>
+        <p><%= @tesla_s.reviews.first.content %></p>
+        <p>Reviewer: <%= @tesla_s.reviews.first.user.username %></p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src=<%= @car_second.image%> class="d-block w-100" alt="...">
+      <img src=<%=@porsche_taycan.image%> class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h5><%= @porsche_taycan.make_plus_model %></h5>
+        <p><%= @porsche_taycan.reviews.first.content %></p>
+        <p>Reviewer: <%= @porsche_taycan.reviews.first.user.username %></p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src=<%= @car_third.image %> class="d-block w-100" alt="...">
+      <img src=<%=@audi_etron.image%> class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        <h5><%= @audi_etron.make_plus_model %></h5>
+        <p><%= @audi_etron.reviews.first.content %></p>
+        <p>Reviewer: <%= @audi_etron.reviews.first.user.username %></p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src=<%= @car_fourth.image%> class="d-block w-100" alt="...">
+      <img src=<%=@kia_soul.image%> class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        <h5><%= @kia_soul.make_plus_model %></h5>
+        <p><%= @kia_soul.reviews.first.content %></p>
+        <p>Reviewer: <%= @kia_soul.reviews.first.user.username %></p>
       </div>
     </div>
   </div>
@@ -94,13 +98,40 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Description</h1>
-    <p class="lead">Full description</p>
+    <p class="lead">The first web application of it's kind to link customers to all electric vehicles. Join us in the revoultion to be better and do better. </p>
   </div>
 </div>
 <hr>
 
 
-<!-- Car Image of Highest Rated Car-->
+<!-- Car Image of Highest Rated Car -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Our highest rated Ev</h1>
+    <p class="lead"></p>
+  </div>
+</div>
+
+<div class="highest-rated">
+  <div class="card-deck">
+    <div class="card">
+      <img class="card-img-bot" src="https://ev-database.org/img/auto/Jaguar_I-Pace/Jaguar_I-Pace-01.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Highest Rated Ev:</h5>
+        <p class="card-texts">“Check out this 2021 I-Pace! For drivers seeking the ultimate in off-road versatility, this vehicle readily steps up to the challenge! The I-Pace boasts standard all-wheel drive thanks to two electric motors that produce a combined 394 horsepower and 512 pound-feet of torque. That energy provides quick and effortless acceleration to zip between city stoplights and pass slowpokes on the highway.  ”</p>
+        <p class="card-text"><small class="text-muted">Kanye last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -113,5 +144,45 @@
   </div>
 </div>
 <hr>
+
+<div class="testimonials">
+  <div class="card-deck">
+    <div class="card">
+      <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Kanye_West_at_the_2009_Tribeca_Film_Festival-2_%28cropped%29.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Testimonial:</h5>
+        <p class="card-text">“I still think I am the greatest. This webapp is a close second.”</p>
+        <p class="card-text"><small class="text-muted">Kanye last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="https://ca.slack-edge.com/T02MD9XTF-U01991STABB-9383a42ee985-512" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Review 2</h5>
+        <p class="card-text">"Amazing and super helpful webpage. Also tell the halal guys to not give me fries instead of hummus"</p>
+        <p class="card-text"><small class="text-muted">John last updated 45 mins ago</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="https://ca.slack-edge.com/T02MD9XTF-U8H2RA3C1-643c8ce562ef-512" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Review 3</h5>
+        <p class="card-text">"Meh. Its alright"</p>
+        <p class="card-text"><small class="text-muted">Greg last updated 2 days ago</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Elon_Musk_and_Hans_Koenigsmann_at_the_SpaceX_CRS-8_post-launch_press_conference_%2826223624532%29_%28cropped%29.jpg/300px-Elon_Musk_and_Hans_Koenigsmann_at_the_SpaceX_CRS-8_post-launch_press_conference_%2826223624532%29_%28cropped%29.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Review 4</h5>
+        <p class="card-text">"I Approve"</p>
+        <p class="card-text"><small class="text-muted">Elon last updated 6 days ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 

@@ -1,18 +1,30 @@
-<h1>  <%= @user.name %>'s' Achievement Show Page </h1>
-
-
 
 <!-- Banner -->
 
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4"><%=@user.name%>'s Achievement Page</h1>
+      <p class="lead">write & favorite reviews to level up</p>
+    </div>
+  </div>
+
+  <div class="achievement-page">
+      <div class= "ach-avatar" >
+     <img src= <%=@user.img_url %> > 
+    </div>
 <!-- Badges -->
-<h3>Current Badge: <%= @achievements.badge %></h3>
+<h3>Current Badge:<%=@achievements.badge %></h3>
+<br>
 <h3>Next badge: <%= @achievements.next_badge_achievement %></h3>
-<h3>You need to create #reviews for your next badge</h3>
+<!-- <h3>You need to create #reviews for your next badge</h3> -->
 <!-- Points -->
-
-<p>How many users liked your reviews:</p>
+<br>
+<h5><p>How many users liked your reviews:</p></h5>
 <h3>Points: <%= @achievements.points %></h3>
-
+<br>
+<br>
 <%= link_to 'Return to Profile', user_path(@user) %>
-
+<br>
 <%= button_to "View All Reviews", user_reviews_path, method: :get %>
+
+</div>

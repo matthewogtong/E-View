@@ -11,7 +11,9 @@
     
     <%= bootstrap_form_for :session, url: login_path do |f| %>
         <% if flash[:login_errors] %>
-            <%= flash[:login_errors] %>
+            <div class="log_in_errors">
+              <%= flash[:login_errors] %>
+            </div>
         <% end %>
         <div class="log-in-text">
         <%= f.text_field :username, class: 'text_field_form' %>

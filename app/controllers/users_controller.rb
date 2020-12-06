@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
     def home
         @users = User.all
+
     end
 
     def login
@@ -24,6 +25,8 @@ class UsersController < ApplicationController
 
     def create
         user = User.create(user_params)
+        user.img_url = Faker::Avatar.image
+        user.save
         Achievement.create(next_badge_achievement: "", badge: "", points: 0, user_id: user.id)
         if user.valid?
             cookies[:user_id] = user.id
@@ -72,23 +75,10 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:name, :username, :password, :age)
+        params.require(:user).permit(:name, :username, :password, :age, :img_url)
     end
 
     def find_user 
         @user = User.find(params[:id])
     end
-    
-
-
-
-
-
-
-
-
-
-
-
-
 end #end of controller

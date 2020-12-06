@@ -1,6 +1,30 @@
-<h1>Models</h1>
-<h2>
-  <% @cars.each do |car| %>
-    <%= link_to car.model, car_path(car)%><br>
-  <% end %>
-</h2>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Models</h1>
+    <p class="lead">Choose a Model</p>
+  </div>
+</div>
+
+
+<div class="navbar"> 
+  <h3></h3>
+  <nav class="nav">
+    <a class="nav-link" <%= link_to 'Home', home_main_path(@current_user) %></a>
+    <a class="nav-link" <%= link_to 'Profile Page', user_path(@current_user) %></a>
+    <a class="nav-link" <%= link_to "Log Out", logout_path, method: :delete %></a>
+  </nav>
+</div>
+
+
+<div class="models">
+  <h2>
+    <ul>
+      <% @cars.each do |car| %>
+      <img src=<%= car.image %>
+      width="400" 
+      height="235">
+        <li class="car"> <%= link_to car.model, car_path(car)%></li><br>
+       <% end %>
+    </ul>
+  </h2>
+</div>
