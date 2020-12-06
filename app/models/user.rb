@@ -7,7 +7,6 @@ class User < ApplicationRecord
     # has_many :cars, through: :favorites
 
     has_secure_password
-
 end
 
 # @user.cars

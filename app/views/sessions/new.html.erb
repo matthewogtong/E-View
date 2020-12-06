@@ -1,25 +1,30 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Welcome to E - View</h1>
+    <p class="lead">A Review Webapp for all your favorite EVs</p>
+  </div>
+</div>
+
+<div class="log-in-form">
 <h1>Login Page</h1>
 
     
-    <%= form_for :session, url: login_path do |f| %>
+    <%= bootstrap_form_for :session, url: login_path do |f| %>
         <% if flash[:login_errors] %>
             <%= flash[:login_errors] %>
         <% end %>
-        <br>
-        <br>
-        <%= f.label :username %>
+        <div class="log-in-text">
         <%= f.text_field :username %>
-        <br>
-        <br>
-        <%= f.label :password %>
         <%= f.text_field :password %>
-        <br>
-        <br>
-        <%= f.submit 'Log In' %>
+        <%= f.submit id="Log In" %>
+    </div>
 
     <% end %>
 
-    <h3>Dont' have an account?</h3>
-    <%= link_to 'Create an Account', new_user_path %>
-    <br>
-    <%= link_to 'Return to Home Page', home_main_path %>
+    <div class="dont_have_an_account">
+        <h3>Dont' have an account? </h3>
+        <%= link_to 'Create an Account', new_user_path, class: 'dont_have_an_account_create_account_link' %>
+        <h6>or</h6>
+    </div>
+    <%= link_to 'Return Home', home_main_path, class: 'dont_have_an_account_return_home' %>
+</div>

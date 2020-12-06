@@ -3,9 +3,9 @@
 <% @car.reviews.each do |review| %>
     <li>
     <%= link_to 'View this Review', review_path(@car) %>
-    <%= review.content %>
-    <%= review.rating %>
-    <%= review.likes %>
+    <br><%= review.content %>
+    <br><%= review.rating %>
+    <br><%= review.likes %>
     </li>
 <% end %>
 

@@ -21,4 +21,9 @@ class Achievement < ApplicationRecord
             self.next_badge_achievement = "You are too experienced"
         end
     end
+
+    # def reviews_for_next_badge
+    # end
+
+
 end #end of class

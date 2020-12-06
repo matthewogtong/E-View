@@ -1,34 +1,36 @@
-<h1>Create An Account</h1>
+<!-- Banner -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Welcome to E - View</h1>
+    <p class="lead">a review web app for all your favorite Evs</p>
+  </div>
+</div>
 
-<%= form_for @user do |f| %>
+<div class="sign-up-form">
+
+<!-- Left Side / Login -->
+
+<h1>Create An Account</h1>
+<%= bootstrap_form_for @user do |f| %>
     <% if flash[:user_errors]  %>
         <% flash[:user_errors].each do |error| %>
             <p><%= error %>
         <% end %>
     <% end %>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %><br>
-
-    <%= f.label :username %><br>
-    <%= f.text_field :username %><br>
-
-    <%= f.label :password %><br>
-    <%= f.password_field :password %><br>
-
-    <%= f.label :age %><br>
-    <%= f.number_field :age %><br>
-    <br>
-    <br>
-
-
-    <%= f.submit %>
-
-    <h3>Already have an account?</h3>
-    <%= link_to 'Login', new_login_path %>
-    <br>
-
-
-
+    <div class="sign-up-text">
+    <%= f.text_field :name %>
+    <%= f.text_field :username %>   
+    <%= f.password_field :password, class: 'passwordf' %>
+    <%= f.number_field :age %>
+    <%= f.submit "SUBMIT"%>
+    </div>
 <% end %>
+    <div class="already_have_an_account">
+        <h3>Already have an account? <%= link_to 'Login', new_login_path %></h3>
+    </div>
+        <%= link_to 'Return Home', home_main_path %>
+</div>
 
-<%= link_to 'Back to Home', home_main_path %>
+
+
+

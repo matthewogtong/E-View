@@ -1,15 +1,145 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import "rails_bootstrap_forms";
+
+/* * {
+    border: 1px solid black;
+} */
+
+/* Banner */
+.jumbotron {
+    text-align: center;
+    padding: 2rem 2rem;
+    background-color: #d3d3d3;
+    font-family: 'Major Mono Display', monospace;
+    border: #660708;
+}
+
+/* Signup Form */
+.sign-up-form {
+    background-color: #d3d3d3;
+    max-width:50%;
+    margin:2rem auto;
+    border: 2px solid #0b090a;
+    padding: 2rem;
+}
+
+.sign-up-form h1 { 
+    color: #0b090a; padding: 10px; 
+    text-align: center;
+    font-family: 'Major Mono Display', monospace;
+}
+
+.sign-up-text {
+    font-family: 'Big Shoulders Inline Display', cursive;
+    font-size: 175%;
+    color: #0b090a
+
+}
+
+.btn-secondary {
+border: none;
+padding: 1rem;
+color: #ffffff;
+background-color: #0b090a;
+margin: 1rem 0;
+}
+
+.btn-secondary:hover {
+    background-color: #ba181b;
+}
+
+.already_have_an_account {
+    font-family: 'Big Shoulders Inline Display', cursive;
+}
+
+a {
+    color: #0b090a;
+}
+
+a:hover {
+    text-decoration: none;
+    transition: .5s;
+    color: #e5383b;
+    font-family: 'Major Mono Display', monospace;
+
+}
+/* Log in Form */
+
+.log-in-form {
+    background-color: #d3d3d3;
+    max-width:50%;
+    margin:2rem auto;
+    border: 2px solid #0b090a;
+    padding: 2rem;
+}
+
+.log-in-form h1 { 
+    color: #0b090a; padding: 10px; 
+    text-align: center;
+    font-family: 'Major Mono Display', monospace;
+}
+
+.log-in-text {
+    font-family: 'Big Shoulders Inline Display', cursive;
+    font-size: 175%;
+    color: #0b090a
+
+}
+
+.dont_have_an_account {
+    font-family: 'Big Shoulders Inline Display', cursive;
+}
+
+.dont_have_an_account_create_account_link {
+    font-size: 150%;
+}
+
+.dont_have_an_account_return_home {
+    font-family: 'Big Shoulders Inline Display', cursive;
+    font-size: 125%;
+}
+
+/* Profile Page */
+.navbar-light .navbar-brand {
+    color: #0b090a;
+    font-family: 'Big Shoulders Inline Display', cursive;
+    font-size: 150%;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #ba181b;
+    font-family: 'Big Shoulders Inline Display', cursive;
+    font-size: 150%;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    padding: 0% 40px ;
+    color: #ba181b;
+    font-family: 'Big Shoulders Inline Display', cursive;
+    font-size: 150%;
+}
+
+.profile_img{
+width: 15%; 
+height: 15%; 
+border: 5px solid #555;
+margin: 0rem 1rem;
+}
+
+
+.recent-reviews {
+color: #0b090a;
+width: 100%;
+height: 100%
+margin: 0rem 1rem;
+padding: 1rem
+}
+
+.view-button{
+    margin: 1rem 0.5rem;
+    padding: 0rem
+}
+
+
+
+
+

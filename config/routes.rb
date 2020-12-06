@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   #Home Page
   get '/home', to: 'homes#main', as: 'home_main'
+  root 'homes#main'
 
   #Session Endpoints
   get '/sessions/new', to: 'sessions#new', as: 'new_login'

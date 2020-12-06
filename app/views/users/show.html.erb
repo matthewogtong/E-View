@@ -1,27 +1,42 @@
-<h1><%= @user.name %></h1>
+<!-- Banner -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Welcome Back,<%= @user.name %></h1>
+    <p class="lead"></p>
+  </div>
+</div>
+   
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Profile</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" <%= link_to "Log Out", logout_path, method: :delete %> <span class="sr-only">(current)</span></a>
+        <a class="nav-link" <%= link_to 'Home', home_main_path(@current_user) %></a> 
+        <a class="nav-link" <%= link_to 'Achievements',  achievement_path(@current_user) %></a>
+        <a class="nav-link" <%= link_to 'Favorites',  user_favorites_path(@current_user) %> <span class="sr-only">(current)</span></a>
+        <a class="nav-link" <%= link_to 'Search Cars', make_index_path %></a>
+        <a class="nav-link" <%= link_to 'Delete Account', delete_user_path(@current_user) %></a>
+        <a class="nav-link" <%= link_to 'Add A Review', new_review_path %></a>
+      </div>
+    </div>
+  </nav>
+  <h1> &nbsp <%=@user.username %>:</h1>
 
-
-<!-- User Nav Bar -->
-<%= link_to "Log Out", logout_path, method: :delete %>
-<br>
-<%= link_to 'Home', home_main_path %>
-<br>
-<%= link_to 'Achievements', achievement_path(@user) %>
-<br>
-<%= link_to 'Favorites', user_favorites_path(@user) %>
-<br>
-<%= link_to 'Search Cars', make_index_path %>
-<br>
-<%= link_to 'Delete Account', delete_user_path(@user) %>
-<br>
-<%= link_to 'Add A Review', new_review_path %>
 <!-- Avatar Picture -->
 
-<!-- Username  -->
-<h3><%=@user.username %></h3>
 
+<body> <img class ="profile_img" src= "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/baby-monkey-silvio-schoisswohl.jpg"> </body>
+
+
+<br>
 <!-- Three Recent Reviews -->
-<h3>
+<br>
+<h4 class= "recent-reviews">
+  <u>Your Recent Reviews:</u> <br>
+  <br>
     <% @recent_reviews.each do |review| %>
         <%= review.car.make%>
         <%= review.car.model %>
@@ -29,13 +44,16 @@
         Rating:<%= review.rating %>
         <br>
        Content: <%= review.content %>
-        <%= review.likes %>
+       <br>
+       Likes: <%= review.likes %>
         <br>
-        <hr>
-    <% end %>
-</h3>
+        <br>
+    <% end %> 
+</h4>
 
+</body>
 <!-- View All Reviews Button -->
+<div class= "view-button">
 <%= button_to "View All Reviews", user_reviews_path, method: :get %>
-
+</div>
 <!-- Footer Backsplash Image -->
