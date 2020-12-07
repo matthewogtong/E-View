@@ -7,9 +7,9 @@
 /* Banner */
 .jumbotron {
     text-align: center;
-    padding: 2rem 2rem;
     background-color: #d3d3d3;
     font-family: 'Major Mono Display', monospace;
+    padding: 2rem 2rem;
 }
 
 /* Signup Form */
@@ -134,7 +134,7 @@ a:hover {
 .parent_profile_page {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-rows: repeat(20, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
 }
@@ -142,6 +142,17 @@ a:hover {
 .parent_profile_page .banner { 
     grid-area: 1 / 1 / 3 / 13; 
     
+}
+
+.parent_profile_page .banner h1 {
+    background-color: #d3d3d3;
+    text-align: justify;
+    padding-top: 35px;
+    padding-left: 20px;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 65px;
+    width: 100%;
+    height: 75%;
 }
 
 .parent_profile_page .navbar { 
@@ -219,12 +230,59 @@ a:hover {
     background-color: #f5f3f4;
 }
 
-.div6 { 
-    grid-area: 9 / 1 / 12 / 13; 
+.parent_profile_page .three_reviews .card-header {
+    font-family: 'Jura', sans-serif;
+    font-size: 150%;
+    overflow: scroll;
 }
-.div7 { 
-    grid-area: 12 / 1 / 13 / 13; 
+
+.parent_profile_page .three_reviews .card-body {
+    font-family: 'Jura', sans-serif;
+    font-size: 100%;
 }
+
+.parent_profile_page .three_reviews h2 {
+    font-family: 'Jura', sans-serif;
+    font-size: 300%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.parent_profile_page .three_reviews .btn-primary {
+    border-color: #660708;
+    background-color: #0b090a;
+    font-family: 'Jura', sans-serif;
+}
+
+.parent_profile_page .three_reviews .btn-primary:hover {
+    background-color: #e5383b;
+    border-color: #0b090a;
+    font-family: 'Major Mono Display', monospace;
+}
+
+.parent_profile_page .favorites_banner { 
+    grid-area: 9 / 1 / 10 / 13; 
+}
+
+.parent_profile_page .favorites_banner h1 {
+    font-family: 'Major Mono Display', monospace;
+    border-style: outset;
+    border-width: 20px;
+    border-color: #660708;
+    text-align: center;
+}
+
+.favorite-cars { 
+    grid-area: 10 / 1 / 15 / 13; 
+}
+
+.favorite-cars img {
+    width: 400px;
+    height: 235px;
+}
+.div8 { grid-area: 15 / 1 / 16 / 13; }
+.div9 { grid-area: 16 / 1 / 20 / 13; }
+.div10 { grid-area: 20 / 1 / 21 / 13; }
 
 /* Home Page */
 .testimonials .card-deck .card .card-img-top{
@@ -298,19 +356,39 @@ a:hover {
 }
 
 .fav-list{
-    background: radial-gradient(circle, black, white);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.651), white);
 
 }
 
 .achievement-page{
     background: radial-gradient(circle, rgba(0, 0, 0, 0.651), white);
     font-family: 'Big Shoulders Inline Display', cursive;
+    padding: 1rem;
+    float: center
+    
+    
+
 
 }
 .achievement-page .ach-avatar{
-    border-style: inset;
-    border-width: 5.5px;
-    border-color: #161a1d;
-    float: left;
+    width:200px; 
+    height:200px; 
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    margin-top: -100px; 
+    margin-left: 350px; 
 }
 
+.last-manu{
+    height: 480px;
+    width: 640px;
+    padding:0rem;
+    /* background: radial-gradient(circle, black, white); */
+}
+
+.manufacturers1 {
+    padding: 1rem;
+    background: radial-gradient(circle, black, white);
+ 
+}

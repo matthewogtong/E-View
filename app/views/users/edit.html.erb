@@ -1,0 +1,19 @@
+<div class="sign-up-form">
+
+    
+    <h1>Edit Your Account</h1>
+    <%= bootstrap_form_for @user do |f| %>
+        <% if flash[:user_errors]  %>
+            <% flash[:user_errors].each do |error| %>
+                <p><%= error %>
+            <% end %>
+        <% end %>
+        <div class="sign-up-text">
+        <%= f.text_field :name, class: 'text_field_form' %>
+        <%= f.text_field :username, class: 'text_field_form' %>   
+        <%= f.number_field :age, class: 'text_field_form' %>
+        <%= f.submit "SUBMIT"%>
+        </div>
+    <% end %>
+            <%= link_to 'Return Home', home_main_path, class: 'dont_have_an_account_return_home' %>
+    </div>

@@ -1,6 +1,8 @@
+<div class="sign-up-form">
+
 <h1>Make A Car Review</h1>
 
-<%= form_for @review do |f| %>
+<%= bootstrap_form_for @review do |f| %>
 
     <% if flash[:review_errors] %>
         <% flash[:review_errors].each do |error| %>
@@ -21,3 +23,6 @@
 
 <%= link_to 'Return to Profile', user_path(@current_user) %>
 
+
+
+</div>

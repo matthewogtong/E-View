@@ -1,22 +1,19 @@
 <!-- Banner -->
 <div class="parent_profile_page">
   <div class="banner"> 
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Welcome Back, <%= @user.name.downcase %></h1>
-          <p class="lead"></p>
-      </div>
-    </div>
+    <h1>Welcome Back, <%= @user.name.downcase %></h1>
   </div>
   <div class="navbar"> 
     <h3>Profile</h3>
     <nav class="nav">
-      <a class="nav-link" <%= link_to "Log Out", logout_path, method: :delete %></a>
-      <a class="nav-link" <%= link_to 'Home', home_main_path(@current_user) %></a>
+      <a class="nav-link" <%= link_to 'Add A Review', new_review_path %></a>
       <a class="nav-link" <%= link_to 'Achievements',  achievement_path(@current_user) %></a>
       <a class="nav-link" <%= link_to 'Favorites',  user_favorites_path(@current_user) %></a>
       <a class="nav-link" <%= link_to 'Search Cars', make_index_path %></a>
-      <a class="nav-link" <%= link_to 'Add A Review', new_review_path %></a>
+      <a class="nav-link" <%= link_to 'Edit Info', edit_user_path(@current_user) %></a>
+      <a class="nav-link" <%= link_to 'Home', home_main_path(@current_user) %></a>
+      <a class="nav-link" <%= link_to 'Log Out', logout_path, method: :delete %></a>
+      <a class="nav-link" <%= link_to 'Delete Account', delete_user_path(@current_user) %></a>
     </nav>
   </div>
   <div class="username"> 
@@ -55,32 +52,32 @@
         </div>
     <% end %>
   </div>
-  <div class="f_a_carousel"> 
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="/user_favorites.html.erb" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="...">
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
+  <div class="favorites_banner"> 
+    <h1>Your Favorited EVs</h1>
   </div>
-  <div class="footer"> 
+  <div class="favorite-cars">
+     <% if @current_user.favorites.first %>
+      <div class="text-center">
+        <img src=<%= @current_user.favorites.first.car.image %> alt=<%= @current_user.favorites.first.car.make_plus_model%> class="img-thumbnail">
+        <img src=<%= @current_user.favorites.first.car.image %> alt=<%= @current_user.favorites.first.car.make_plus_model%> class="img-thumbnail">
+        <img src=<%= @current_user.favorites.first.car.image %> alt=<%= @current_user.favorites.first.car.make_plus_model%> class="img-thumbnail">
+      </div>
+    <% end %>
+    <% if @current_user.favorites.second %>
+      <div class="text-center">
+        <img src=<%= @current_user.favorites.second.car.image %> alt=<%= @current_user.favorites.second.car.make_plus_model%> class="img-thumbnail">
+      </div>
+    <% end %>
+     <% if @current_user.favorites.third %>
+      <div class="text-right">
+        <img src=<%= @current_user.favorites.third.car.image %> alt=<%= @current_user.favorites.third.car.make_plus_model%> class="img-thumbnail">
+      </div>
+    <% end %>
   </div>
 </div>
+<div class="div8"> </div>
+<div class="div9"> </div>
+<div class="div10"> </div>
 <%# <!-- View All Reviews Button  --> %>
 <div class= "view-button">
 <%= button_to "View All Reviews", user_reviews_path, method: :get %>

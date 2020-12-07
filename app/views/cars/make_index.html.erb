@@ -15,7 +15,122 @@
 </div>
 
 
-<div class="make-carousel">
+<div class="manufacturers1">
+  <ul>
+    <% @cars.each do |car| %>
+    <li class="car"><%= link_to car, model_index_path(car) %></li>
+    <% end %>
+  </ul>
+  
+  <!-- <%= link_to 'Back to Home Page', home_main_path %> -->
+  
+  </div>
+
+
+<div class="manufacturers">
+  <div class="card-deck">
+    <div class="card">
+      <img class="card-img-top" src="https://car-logos.net/wp-content/uploads/2018/09/audi-logo.jpg">
+      <div class="card-body">
+        <h5 class="card-title">Manufacturer:</h5>
+        <p class="card-text">"Audi"</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="https://car-logos.net/wp-content/uploads/2018/09/bmw-logo.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Manufacturer:</h5>
+        <p class="card-text">"BMW"</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="https://car-logos.net/wp-content/uploads/2018/09/chevrolet-logo.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Manufacturer:</h5>
+        <p class="card-text">"Chevrolet"</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="https://car-logos.net/wp-content/uploads/2018/09/hyundai-logo.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Manufacturer:</h5>
+        <p class="card-text">"Hyundai"</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="manufacturers">
+  <div class="card-deck">
+    <div class="card">
+      <img class="card-img-top" src="https://car-logos.net/wp-content/uploads/2018/09/jaguar-logo.jpg">
+      <div class="card-body">
+        <h5 class="card-title">Manufacturer:</h5>
+        <p class="card-text">“Jaguar”</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="https://car-logos.net/wp-content/uploads/2018/09/kia-logo.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Manufacturer:</h5>
+        <p class="card-text">"KIA"</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="https://car-logos.net/wp-content/uploads/2018/09/nissan-logo.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Manufacturer:</h5>
+        <p class="card-text">"Nissan"</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="https://car-logos.net/wp-content/uploads/2018/09/porsche-logo.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Manufacturer:</h5>
+        <p class="card-text">"Porsche"</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="last-manu">
+<div class="manufacturers">
+  <div class="card-deck">
+    <div class="card">
+      <img class="card-img-top" src="https://car-logos.net/wp-content/uploads/2018/09/tesla-logo.jpg">
+      <div class="card-body">
+        <h5 class="card-title">Manufacturer:</h5>
+        <p class="card-text">“Tesla”</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="https://car-logos.net/wp-content/uploads/2018/09/volkswagen-logo.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Manufacturer:</h5>
+        <p class="card-text">"Volkswagen"</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+<!-- <div class="make-carousel">
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -103,16 +218,6 @@
     <span class="sr-only">Next</span>
   </a>  
 </div>
-</div>
+</div> -->
 
 
-<div class="manufacturers">
-  <ul>
-    <% @cars.each do |car| %>
-    <li class="car"><%= link_to car, model_index_path(car) %></li>
-    <% end %>
-  </ul>
-  
-  <%= link_to 'Back to Home Page', home_main_path %>
-  
-  </div>
