@@ -428,9 +428,30 @@ a:hover {
     transition: .2s;
 }
 
-/* .parent_profile_page .div10 { 
-    grid-area: 30 / 1 / 31 / 13; 
-} */
+/* Favorites Page */
+
+.parent_fp {
+    background: linear-gradient(to right, #ffffff, #b1a7a6);
+}
+
+.parent_fp .banner {
+    background-color: #d3d3d3;
+    text-align: justify;
+    padding-top: 35px;
+    padding-left: 20px;
+    padding-bottom: 25px;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 65px;
+    border-width: 20px;
+    border-style: outset;
+    border-color: #660708;
+}
+
+.parent_fp .banner h1 {
+
+}
+
+
 
 /* Home Page */
 .testimonials .card-deck .card .card-img-top{
@@ -497,11 +518,12 @@ a:hover {
  
 }
 
-.fav-list{
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.651), white);
-}
+
 
 /* Achievement Page */
+.parent_ap {
+    background-image: linear-gradient(to right, #d3d3d3, #d3d3d3);
+}
 .parent_ap .banner {
     background-color: #d3d3d3;
     text-align: justify;
@@ -533,6 +555,9 @@ a:hover {
 .parent_ap .stats {
     background-image: linear-gradient(to right, #d3d3d3, #660708);
     font-family: 'Big Shoulders Inline Display', cursive;
+    border-width: 20px;
+    border-style: outset;
+    border-color: #660708;
 }
 
 .parent_ap .stats .avatar img{
@@ -558,6 +583,19 @@ a:hover {
     font-size: 40px;
 }
 
+.parent_ap .stats-banner {
+    background-color: #d3d3d3;
+    text-align: justify;
+    padding-top: 35px;
+    padding-left: 20px;
+    padding-bottom: 25px;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 65px;
+    border-width: 20px;
+    border-style: outset;
+    border-color: #660708;
+    margin-top: 2%;
+}
 .parent_ap .achievements-banner h1 {
     font-family: 'Major Mono Display', monospace;
     border-style: outset;
@@ -584,7 +622,6 @@ a:hover {
     border-style: outset;
     border-width: 3px;
     border-color: #660708;
-    font-size: 40x;
 }
 
 .parent_ap .badges .media-body {
@@ -605,16 +642,21 @@ a:hover {
 
 
 .last-manu {
-    display: flex;
+    /* display: flex;
   justify-content: center;
     margin-right: 0px;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 20px; */
    /* height: 480px;
-    width: 640px;
+    width: 740px;
+    margin-right: auto ;
+    margin-left: auto
     padding:0rem; */
     /* background: radial-gradient(circle, black, white); */
-   
+     display: flex;
+     align-items: center;
+     justify-content: center;
+
 }
 
 .manufacturers1 {
@@ -696,3 +738,4 @@ a:hover {
 .user-review-page{
     background: radial-gradient(circle, rgba(0, 0, 0, 0.651), white)
 }
+

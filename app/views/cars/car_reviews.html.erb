@@ -11,9 +11,10 @@
 <% @car.reviews.each do |review| %>
     <li>
     <%= link_to 'View this Review', review_path(review.id) %>
-    <br>Review Content:<%= review.content %>
-    <br>Rating:<%= review.rating %>
-    <br>Number of Likes:<%= review.likes %>
+    <br><b>Review Content: </b><%= review.content %>
+    <br><b>Rating: </b><%= review.rating %>
+    <br><b>Number of Likes: </b><%= review.likes %>
+    <br><b>Author: </b><%= review.user.name %>
     </li>
     <br>
     <br>
