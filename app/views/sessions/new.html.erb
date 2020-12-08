@@ -5,7 +5,8 @@
   </div>
 </div>
 
-<div class="log-in-form">
+<div class= "log-in-form1">
+<div class= "log-in-form">
 <h1>Login Page</h1>
 
     
@@ -17,7 +18,7 @@
         <% end %>
         <div class="log-in-text">
         <%= f.text_field :username, class: 'text_field_form' %>
-        <%= f.text_field :password, class: 'text_field_form'  %>
+        <%= f.password_field :password, class: 'text_field_form'  %>
         <%= f.submit id="Log In" %>
     </div>
 
@@ -29,4 +30,5 @@
         <h6>or</h6>
     </div>
     <%= link_to 'Return Home', home_main_path, class: 'dont_have_an_account_return_home' %>
+</div>
 </div>

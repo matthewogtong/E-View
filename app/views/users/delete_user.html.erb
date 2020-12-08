@@ -1,5 +1,26 @@
-<h1>Delete User Form</h1>
+<div class="delete-form">
+<div class="sign-up-form">
 
-<%= button_to "DELETE", user_path, method: :delete %>
-<br>
-<%= link_to 'Back to Profile', user_path(@user) %>
+    
+    <h1>Delete Your Account</h1>
+    <h5> Please enter the following information to delete your account </h5>
+    <%= bootstrap_form_for @user do |f| %>
+        <% if flash[:delete_errors]  %>
+            <%= flash[:delete_errors] %>
+        <% end %>
+        <div class="sign-up-text">
+            <%= f.text_field :username, class: 'text_field_form' %>
+            <%= f.password_field :password, class: 'text_field_form' %>   
+            <%= button_to "DELETE", user_path, method: :delete %>
+        </div>
+    <% end %>
+    <%= link_to 'Back to Profile', user_path(@user) %>
+    </div>
+</div>
+
+
+
+
+
+
+

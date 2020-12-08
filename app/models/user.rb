@@ -11,7 +11,7 @@ class User < ApplicationRecord
     validates :name, presence: true
     validates :username, presence: true
     validates :username, uniqueness: true
-    validates :age, numericality: {greater_than: 18, less_than: 99}
+    validates :age, numericality: {greater_than: 17, less_than: 99}
 end
 
 # @user.cars

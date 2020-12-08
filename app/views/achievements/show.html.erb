@@ -1,32 +1,117 @@
 
 <!-- Banner -->
-
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4"><%=@user.name%>'s Achievement Page</h1>
-      <p class="lead">write & favorite reviews to level up</p>
-    </div>
+<div class="parent_ap">
+  <div class="banner"> 
+    <h1><%= @user.name.downcase %>'s Stats</h1>
   </div>
-
-
-
-  <div class="achievement-page">
-      <div class= "ach-avatar" >
-     <img src= <%=@user.img_url %> > 
+  <div class="navbar"> 
+    <h3>Stats</h3>
+    <nav class="nav">
+      <a class="nav-link" <%= link_to 'Return to Profile', user_path(@current_user)  %></a>
+      <a class="nav-link" <%= link_to 'Add a Review', new_review_path %></a>
+      <a class="nav-link" <%= link_to 'Favorites',  user_favorites_path(@current_user) %></a>
+      <a class="nav-link" <%= link_to 'Search Cars', make_index_path %></a>
+      <a class="nav-link" <%= link_to "View All Reviews", user_reviews_path %></a>
+      <a class="nav-link" <%= link_to 'Edit Info', edit_user_path(@current_user) %></a>
+      <a class="nav-link" <%= link_to 'Home', home_main_path(@current_user) %></a>
+      <a class="nav-link" <%= link_to 'Log Out', logout_path, method: :delete %></a>
+      <a class="nav-link" <%= link_to 'Delete Account', delete_user_path(@current_user) %></a>
+    </nav>
+  </div>
+  <div class="stats">
+    <div class= "avatar" >
+      <img src= <%=@user.img_url %> > 
     </div>
-<!-- Badges -->
-<h3>Current Badge:<%=@achievements.badge %></h3>
-<br>
-<h3>Next badge: <%= @achievements.next_badge_achievement %></h3>
-<!-- <h3>You need to create #reviews for your next badge</h3> -->
-<!-- Points -->
-<br>
-<h5><p>How many users liked your reviews:</p></h5>
-<h3>Points: <%= @achievements.points %></h3>
-<br>
-<br>
-<%= link_to 'Return to Profile', user_path(@user) %>
-<br>
-<%= button_to "View All Reviews", user_reviews_path, method: :get %>
-
+    <h3>Current Badge: <%=@achievements.badge %></h3>
+    <br>
+    <h3>Next badge: <%= @achievements.next_badge_achievement %></h3>
+    <br>
+    <h3>Total Upvotes: <%= @achievements.points %></h3>
+    <br>
+    <h3>Total Reviews Created: <%= @user.reviews.count %></h3>
+    <br>
+    <h3>Total Favorited Cars: <%= @user.favorites.count %></h3>
+  </div>
+   <div class="badges"> 
+    <ul class="list-unstyled">
+      <li class="media">
+        <img src="https://www.kindpng.com/picc/m/31-313781_boulder-badge-pokemon-boulder-badge-hd-png-download.png" class="mr-3" alt="...">
+        <div class="media-body">
+          <h3 class="mt-0 mb-1">boulder badge</h3>
+            We appreiciate you using our web app! Here's a badge on us!<br>
+            Fun Fact: 80% of the energy in an electric vehicle battery is
+              transferred directly to powering the car, whereas in
+              a gasoline powered vehicle only 15% of the energy
+              goes directly toward powering the car.
+        </div>
+      </li>
+      <li class="media">
+        <% if @user.achievement.points >=5 %>
+          <img src="https://res.cloudinary.com/teepublic/image/private/s--iTNp8kM_--/c_crop,x_10,y_10/c_fit,w_830/c_crop,g_north_west,h_1038,w_1038,x_-104,y_-107/l_upload:v1565806151:production:blanks:vdbwo35fw6qtflw9kezw/fl_layer_apply,g_north_west,x_-215,y_-218/b_rgb:191919/c_limit,f_jpg,h_630,q_90,w_630/v1512964903/production/designs/2163621_1.jpg" class="mr-3" alt="...">
+          <div class="media-body">
+          <h3 class="mt-0 mb-1">earth badge</h3>
+             Aye, nice going! <br>
+             Fun Fact: On average, the cost to power a vehicle by
+              electricity is half the cost per mile to power it by
+              gasoline, and electricity prices are much more
+              stable than gas prices.
+        </div>
+        <% else %>
+          <img src="https://lh3.googleusercontent.com/proxy/EjhVQfUo90ORNQX3XgLAxfu4B1dx_r9ZVJkJ9wzbQMpulhC8EJgZN-vYcE-RyaZmt0d9SeDwDYmNh_pPilUkpfEPF1WyFZwDUhu98N6m8sCMoEnT7xIubNZRDt9lq4n6F0cGg60hKsG_XhaD4T2-og8zO_brqROyVb2x" class="mr-3" alt="...">
+          <div class="media-body">
+          <h3 class="mt-0 mb-1">get more upvotes to unlock me...</h3>
+          </div>
+        <% end %>
+      </li>
+      <li class="media">
+        <% if @user.achievement.points >=15 %>
+          <img src="https://i.pinimg.com/originals/a2/45/52/a245529b37be9d542d3dffb40b0c8985.jpg" class="mr-3" alt="...">
+          <div class="media-body">
+          <h3 class="mt-0 mb-1">rising badge</h3>
+            You're reviews are a hit! <br>
+            Fun Fact: An expected 0-60 time of 1.9 seconds for Tesla's second generation Roadster means it will be the quickest production car ever made. A 200-kWh battery with the help of three motors will provide 10,000 Nm of thrust to make all this possible. In addition, the car is expected to hit the quarter mile in 8.9 seconds and hit a top speed of at least 250 mph.
+          </div>
+        <% else %>
+          <img src="https://lh3.googleusercontent.com/proxy/EjhVQfUo90ORNQX3XgLAxfu4B1dx_r9ZVJkJ9wzbQMpulhC8EJgZN-vYcE-RyaZmt0d9SeDwDYmNh_pPilUkpfEPF1WyFZwDUhu98N6m8sCMoEnT7xIubNZRDt9lq4n6F0cGg60hKsG_XhaD4T2-og8zO_brqROyVb2x" class="mr-3" alt="...">
+          <div class="media-body">
+          <h3 class="mt-0 mb-1">get more upvotes to unlock me...</h3>
+          </div>
+        <% end %>
+      </li>
+      <li class="media">
+        <% if @user.achievement.points >=30 %>
+          <img src="https://cdn.staticneo.com/w/pokemon/1/1c/BeaconBadge.png" class="mr-3" alt="...">
+          <div class="media-body">
+          <h3 class="mt-0 mb-1">beacon badge</h3>
+          You should get paid to write reviews. <br>
+          Fun Fact: Elon Musk sent a Tesla into space!  In February of 2018, Elon Musk launched a cherry red Tesla roadster into orbit, with a “dummy” aka Starman, in the driver’s seat.
+          </div>
+        <% else %>
+          <img src="https://lh3.googleusercontent.com/proxy/EjhVQfUo90ORNQX3XgLAxfu4B1dx_r9ZVJkJ9wzbQMpulhC8EJgZN-vYcE-RyaZmt0d9SeDwDYmNh_pPilUkpfEPF1WyFZwDUhu98N6m8sCMoEnT7xIubNZRDt9lq4n6F0cGg60hKsG_XhaD4T2-og8zO_brqROyVb2x" class="mr-3" alt="...">
+          <div class="media-body">
+          <h3 class="mt-0 mb-1">get more upvotes to unlock me...</h3>
+          </div>
+        <% end %>
+      </li>
+      <li class="media">
+        <% if @user.achievement.points >=50 %>
+          <img src="https://wallpapercave.com/wp/wp3544529.jpg" class="mr-3" alt="...">
+          <div class="media-body">
+          <h3 class="mt-0 mb-1">tesla badge</h3>
+            You are a true advocate for EVs. Thank you again for using our app!
+            <br>
+            "We are going to exit the fossil fiel era. It is inevitable" 
+            <br>
+            - Elon Musk
+          </div>
+        <% else %>
+          <img src="https://lh3.googleusercontent.com/proxy/EjhVQfUo90ORNQX3XgLAxfu4B1dx_r9ZVJkJ9wzbQMpulhC8EJgZN-vYcE-RyaZmt0d9SeDwDYmNh_pPilUkpfEPF1WyFZwDUhu98N6m8sCMoEnT7xIubNZRDt9lq4n6F0cGg60hKsG_XhaD4T2-og8zO_brqROyVb2x" class="mr-3" alt="...">
+          <div class="media-body">
+          <h3 class="mt-0 mb-1">get more upvotes to unlock me...</h3>
+          </div>
+        <% end %>
+      </li>
+    </ul>
+  </div>
 </div>
+  <!-- Badges -->

@@ -1,20 +1,37 @@
-<h1>All Your Reviews</h1>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Here's A List Of All Your Reviews</h1>
+      <p class="lead"></p>
+    </div>
+  </div>
 
+  <div class="navbar"> 
+    <h3></h3>
+    <nav class="nav">
+      <a class="nav-link" <%= link_to 'Home', home_main_path(@current_user) %></a>
+      <a class="nav-link" <%= link_to 'Profile Page', user_path(@current_user) %></a>
+      <a class="nav-link active" <%= link_to "Log Out", logout_path, method: :delete %> <span class="sr-only">(current)</span></a>
+    </nav>
+  </div>
+
+<div class="user-review-page">
 <ul>
     <% @reviews.each do |review| %>
-        <%= link_to 'View this Review', review_path(review.id) %>
+       <li> <h5> <%= link_to 'View this Review', review_path(review.id) %> </h5>
         <br>
-        <%= review.car.make%>
+        <b>Car:</b> <%= review.car.make%>
         <%= review.car.model %>
         <br>
-        Rating:<%= review.rating %>
+        <b>Rating:</b> <%= review.rating %>
         <br>
-       Content: <%= review.content %>
-        <%= review.likes %>
+       <b>Content:</b> <%= review.content %>
+       <br>
+        <b>Likes:</b> <%= review.likes %>
+        <br>
         <br>
         <br>
         <br>
     <% end %>
 </ul>
 
-<%= link_to 'Return to Profile Page', user_path() %>
+</div>

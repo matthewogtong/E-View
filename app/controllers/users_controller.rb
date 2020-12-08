@@ -17,6 +17,9 @@ class UsersController < ApplicationController
 
     def show
         @recent_reviews = @current_user.reviews.last(3)
+        achievement = @current_user.achievement
+        achievement.badges
+        @badge = @current_user.achievement.badge
     end
 
     def new
@@ -56,8 +59,11 @@ class UsersController < ApplicationController
 
     def destroy
         @user = User.find(params[:id])
+
+        cookies[:user_id] = @user.id
+
         @user.destroy
-  
+
         redirect_to home_main_path
     end
 

@@ -12,9 +12,5 @@ class Car < ApplicationRecord
         cars = Car.all
         @car_makes = cars.map { |car| car.make}
     end
-
-    def average_rating
-        
-    end
-
+    
 end

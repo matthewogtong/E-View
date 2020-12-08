@@ -1,12 +1,22 @@
-<h1> Car Review Show Page </h1> 
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Car Review Show Page </h1>
+      <p class="lead"></p>
+    </div>
+  </div>
 
 <!-- Nav Bar -->
-<%= link_to 'Return to Car Show Page', car_path(@review.car) %>
-<br>
-<%= link_to 'Profile', user_path(@review.user_id) %>
-<br>
-<%= link_to 'Home', home_main_path %>
 
+<div class="navbar"> 
+    <h3></h3>
+    <nav class="nav">
+      <a class="nav-link" <%= link_to 'Home', home_main_path(@current_user) %></a>
+      <a class="nav-link" <%= link_to 'Profile Page', user_path(@current_user) %></a>
+      <a class="nav-link" <%= link_to "Car Show Page", car_path(@review.car) %></a>
+    </nav>
+  </div>
+
+<div class="review-show-page">
 
 <h3>Make: <%= @review.car.make %></h3>
 <h3>Model: <%= @review.car.model %></h3>
@@ -20,3 +30,5 @@
     <h5><%= flash[:like_error] %> </h5>
 <% end %>
 <%= button_to 'Upvote', add_a_like_path(@review), method: :patch%>
+
+</div>

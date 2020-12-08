@@ -4,22 +4,28 @@ class Achievement < ApplicationRecord
 
 
     def badges
-        if self.user.reviews.count < 5
-            self.badge = "You are Nothing"
-            self.next_badge_achievement = "Youngling"
-        elsif self.user.reviews.count >= 5 && self.user.reviews.count < 15
-            self.badge = "Youngling"
-            self.next_badge_achievement = "Padawan"
-        elsif self.user.reviews.count >= 15 && self.user.reviews.count < 30
-            self.badge = "Padawan"
-            self.next_badge_achievement = "Knight"
-        elsif self.user.reviews.count >= 30 && self.user.reviews.count < 50
-            self.badge = "Knight"
-            self.next_badge_achievement = "Jedi Master"
-        elsif self.user.reviews.count >= 50 && self.user.reviews.count < 70
-            self.badge = "Jedi Master"
-            self.next_badge_achievement = "You are too experienced"
+        if self.user.achievement.points < 5
+            self.badge = "Boulder"
+            self.next_badge_achievement = "Earth"
+            self.save
+        elsif self.user.achievement.points >= 5 && self.user.achievement.points < 15
+            self.badge = "Earth"
+            self.next_badge_achievement = "Rising"
+            self.save
+        elsif self.user.achievement.points >= 15 && self.user.achievement.points < 30
+            self.badge = "Rising"
+            self.next_badge_achievement = "Beacon"
+            self.save
+        elsif self.user.achievement.points >= 30 && self.user.achievement.points < 50
+            self.badge = "Beacon"
+            self.next_badge_achievement = "Tesla"
+            self.save
+        elsif self.user.achievement.points >= 50 && self.user.achievement.points < 70
+            self.badge = "Tesla"
+            self.next_badge_achievement = "You got 'em all. You are a true advocate for EVs. Thank you!"
+            self.save
         end
+        
     end
 
     # def reviews_for_next_badge

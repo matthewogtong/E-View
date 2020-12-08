@@ -1,12 +1,25 @@
-<h1>All Reviews For <%= @car.make_plus_model  %></h1>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">All Reviews for <%= @car.make_plus_model %> </h1>
+      <p class="lead"></p>
+    </div>
+  </div>
+
+<div class= "car-review-show">
+
 
 <% @car.reviews.each do |review| %>
     <li>
-    <%= link_to 'View this Review', review_path(@car) %>
-    <br><%= review.content %>
-    <br><%= review.rating %>
-    <br><%= review.likes %>
+    <%= link_to 'View this Review', review_path(review.id) %>
+    <br>Review Content:<%= review.content %>
+    <br>Rating:<%= review.rating %>
+    <br>Number of Likes:<%= review.likes %>
     </li>
+    <br>
+    <br>
 <% end %>
 
 <%= link_to 'Return to Car Show Page', car_path(@car) %>
+
+
+</div>

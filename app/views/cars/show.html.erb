@@ -10,12 +10,15 @@
     <h3></h3>
     <nav class="nav">
       <a class="nav-link" <%= link_to 'Home', home_main_path(@current_user) %></a>
+      <a class="nav-link" <%= link_to 'Add A Review', new_review_path %></a>
       <a class="nav-link" <%= link_to 'Profile Page', user_path(@current_user) %></a>
       <a class="nav-link" <%= link_to "Log Out", logout_path, method: :delete %></a>
     </nav>
   </div>
 
 </b>
+
+<div class="car-show">
 
 <!--  Car Make + Model --->
 <h5><b>Car: </b>
@@ -33,9 +36,9 @@
        height="235" >
 
 <!-- Average Rating-->
-<% if @car.rating %>
+<% if @car.reviews.count > 0 %>
     <h4>Average Rating: <%= @car.rating.round(2) %></h4>
-    <% else %>
+  <% else %>
     <%= 'There are no reviews for this car yet' %>
 <% end %>
 
@@ -57,3 +60,13 @@
     <%= flash[:favorite_error] %>
 <% end %>
 </b>
+
+</div>
+
+
+
+
+
+
+
+

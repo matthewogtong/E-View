@@ -3,6 +3,8 @@ class CarsController < ApplicationController
     def show
         @car = Car.find(params[:id])
         
+        
+        
     end
 
     def make_index 
@@ -17,6 +19,8 @@ class CarsController < ApplicationController
 
     def car_reviews
         @car = Car.find_by(id: params[:car_id])
+        
+        
     end
 
     private

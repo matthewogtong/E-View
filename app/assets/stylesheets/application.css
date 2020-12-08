@@ -11,6 +11,31 @@
     font-family: 'Major Mono Display', monospace;
     padding: 2rem 2rem;
 }
+/* Edit Form */
+.edit-form{
+
+    background-image: linear-gradient(to right, #660708, #0b090a);
+    font-family: 'Major Mono Display', monospace;
+}
+
+.delete-form{
+
+    background-image: linear-gradient(to right, #660708, #0b090a);
+    font-family: 'Major Mono Display', monospace;
+}
+
+.user-new-form{
+
+    background-image: linear-gradient(to right, #660708, #0b090a);
+    font-family: 'Major Mono Display', monospace;
+}
+
+.new-review-form{
+    background-image: linear-gradient(to right, #660708, #0b090a);
+    font-family: 'Major Mono Display', monospace;
+
+}
+
 
 /* Signup Form */
 .sign-up-form {
@@ -18,10 +43,12 @@
     max-width:50%;
     margin:2rem auto;
     border: 2px solid #0b090a;
-    padding: 2rem;
+    padding: 10rem;
+    background-image: linear-gradient(to right, #d3d3d3, #660708);
+
 }
 
-.sign-up-form h1 { 
+.edit-form .sign-up-form h1 { 
     color: #0b090a; padding: 10px; 
     text-align: center;
     font-family: 'Major Mono Display', monospace;
@@ -64,13 +91,16 @@ a:hover {
     font-family: 'Major Mono Display', monospace;
 }
 /* Log in Form */
-
+.log-in-form1 {
+    background-image: linear-gradient(to right, #660708, #0b090a);
+}
 .log-in-form {
     background-color: #d3d3d3;
     max-width:50%;
     margin:2rem auto;
     border: 2px solid #0b090a;
-    padding: 2rem;
+    padding: 10rem;
+    background-image: linear-gradient(to right, #d3d3d3, #660708);
 }
 
 .log-in-form h1 { 
@@ -87,7 +117,8 @@ a:hover {
 }
 
 .log_in_errors {
-    color: #ba181b;
+    color: black;
+    
 }
 
 .dont_have_an_account {
@@ -131,17 +162,21 @@ a:hover {
 
 /* Profile Page */
 
-.parent_profile_page {
+/* .parent_profile_page {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(20, 1fr);
+    grid-template-rows: repeat(30, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
-}
     
-.parent_profile_page .banner { 
+} */
+    
+/* .parent_profile_page .banner { 
     grid-area: 1 / 1 / 3 / 13; 
     
+} */
+.parent_profile_page {
+    background-image: linear-gradient(to right, #ffffff, #dee2e6);
 }
 
 .parent_profile_page .banner h1 {
@@ -149,19 +184,25 @@ a:hover {
     text-align: justify;
     padding-top: 35px;
     padding-left: 20px;
+    padding-bottom: 25px;
     font-family: 'Major Mono Display', monospace;
     font-size: 65px;
-    width: 100%;
-    height: 75%;
+    border-width: 20px;
+    border-style: outset;
+    border-color: #660708;
 }
 
 .parent_profile_page .navbar { 
-    grid-area: 3 / 1 / 4 / 13; 
+    /* grid-area: 3 / 1 / 5 / 13;  */
     background-color: #d3d3d3;
     color: #0b090a;
     font-family: 'Big Shoulders Inline Display', cursive;
     font-size: 175%;
     background-color: #d3d3d3;
+    border-width: 20px;
+    border-style: outset;
+    border-color: #660708;
+    margin: 3% 0%;
 }
 
 .parent_profile_page .navbar h3 {
@@ -169,34 +210,50 @@ a:hover {
     color: #ba181b;
 }
 
-.parent_profile_page .username { 
-    grid-area: 4 / 1 / 5 / 5; 
-}
+/* .parent_profile_page .username { 
+    grid-area: 5 / 1 / 7 / 5; 
+} */
 
 .parent_profile_page .username h4 {
     font-family: 'Major Mono Display', monospace;
-}
-.parent_profile_page .username span {
-    font-family: 'Major Mono Display', monospace;
+    margin: 2%;
 }
 
-.parent_profile_page .avatar { 
-    grid-area: 5 / 1 / 9 / 5; 
-}
+/* .parent_profile_page .avatar { 
+    grid-area: 7 / 1 / 12 / 5; 
+} */
 
 .parent_profile_page .avatar img {
     border-style: inset;
     border-width: 8px;
     border-color: #161a1d;
+    margin: 2%;
+    background-color: #ffffff;
 }
 
-.parent_profile_page .three_reviews { 
-    grid-area: 4 / 5 / 9 / 13;
+.parent_profile_page .avatar img:hover {
+    background-color: #edf2fb;
+    border-style: outset;
+    border-color: #e5383b;
+    border-radius: 20px;
+    border-width: 3px;
+    transition: .2s;
 }
 
-.parent_profile_page .three_reviews h4 {
+/* .parent_profile_page .three_reviews { 
+    grid-area: 5 / 5 / 12 / 13;
+} */
+
+.parent_profile_page .three_reviews h1 {
     font-family: 'Major Mono Display', monospace;
+    border-style: outset;
+    border-width: 20px;
+    border-color: #660708;
     text-align: center;
+}
+
+.parent_profile_page .three_reviews {
+    margin: 3% 0%;
 }
 
 .parent_profile_page .three_reviews img { 
@@ -209,10 +266,11 @@ a:hover {
 }
 
 .parent_profile_page .three_reviews .text-center {
-    margin-bottom: 20px;
-    border-style: inset;
-    border-width: 3px;
-    border-color: #161a1d;
+    border-style: solid;
+    border-width: 20px;
+    border-color: #b1a7a6;
+    margin: 3% 0%;
+
 }
 
 .parent_profile_page .three_reviews .card h2 {
@@ -260,9 +318,9 @@ a:hover {
     font-family: 'Major Mono Display', monospace;
 }
 
-.parent_profile_page .favorites_banner { 
-    grid-area: 9 / 1 / 10 / 13; 
-}
+/* .parent_profile_page .favorites_banner { 
+    grid-area: 12 / 1 / 14 / 13; 
+} */
 
 .parent_profile_page .favorites_banner h1 {
     font-family: 'Major Mono Display', monospace;
@@ -272,17 +330,107 @@ a:hover {
     text-align: center;
 }
 
-.favorite-cars { 
-    grid-area: 10 / 1 / 15 / 13; 
+/* .parent_profile_page .favorite-cars { 
+    grid-area: 14 / 1 / 21 / 13; 
+} */
+
+.parent_profile_page .favorite-cars {
+    background-image: url("garage.jpg");
+    background-position: center;
+}
+.parent_profile_page .favorite-cars img {
+    width: 500px;
+    height: 310px;
+    border-width: 15px;
+    border-style: inset;
+    border-color: #660708;
+    padding: 0px;
 }
 
-.favorite-cars img {
-    width: 400px;
-    height: 235px;
+.parent_profile_page .favorite-cars img:hover {
+    background-color: #edf2fb;
+    border-style: outset;
+    border-color: #e5383b;
+    border-radius: 20px;
+    border-width: 3px;
+    transition: .2s;
 }
-.div8 { grid-area: 15 / 1 / 16 / 13; }
-.div9 { grid-area: 16 / 1 / 20 / 13; }
-.div10 { grid-area: 20 / 1 / 21 / 13; }
+
+.parent_profile_page .favorite-cars h2 {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Jura', sans-serif;
+    margin: 3% 0px;
+    font-size: 45px
+}
+
+.parent_profile_page .favorite-cars .favorite-car-link .car-link {
+    font-family: 'Jura', sans-serif;
+    font-size: 40px;
+    color: #ffffff;
+}
+
+.parent_profile_page .favorite-cars .favorite-car-link .car-link:hover {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 40px;
+    color: #ffffff;
+}
+
+/* .parent_profile_page .achievements-banner { 
+    grid-area: 21 / 1 / 23 / 13; 
+} */
+
+.parent_profile_page .achievements-banner h1 {
+    font-family: 'Major Mono Display', monospace;
+    border-style: outset;
+    border-width: 20px;
+    border-color: #660708;
+    text-align: center;
+}
+
+/* .parent_profile_page .badges { 
+    grid-area: 23 / 1 / 30 / 13;
+} */
+.parent_profile_page .badges .media {
+    margin: 3% 0px;
+}
+
+.parent_profile_page .badges img {
+    width: 250px;
+    height: 200px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: #161a1d;
+    padding: 0px;
+}
+
+.parent_profile_page .badges .media-body h3{
+    font-family: 'Major Mono Display', monospace;
+    border-style: outset;
+    border-width: 3px;
+    border-color: #660708;
+    font-size: 40x;
+}
+
+.parent_profile_page .badges .media-body {
+    font-family: 'Jura', sans-serif;
+    font-size: 25px;
+}
+
+.parent_profile_page .badges img:hover {
+    width: 250px;
+    height: 200px;
+    background-color: #edf2fb;
+    border-style: outset;
+    border-color: #e5383b;
+    border-radius: 20px;
+    border-width: 3px;
+    transition: .2s;
+}
+
+/* .parent_profile_page .div10 { 
+    grid-area: 30 / 1 / 31 / 13; 
+} */
 
 /* Home Page */
 .testimonials .card-deck .card .card-img-top{
@@ -337,58 +485,214 @@ a:hover {
     overflow:hidden
   }
 
-  .make-carousel .carousel-item img {
-
+.make-carousel .carousel-item img {
     height: 500px;
     width: 300px;
     margin:0% 0%;
-   
-   
 }
 
 .models {
     padding: 1  rem;
-    background: radial-gradient(circle, black, white);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.651), white);
  
-}
-.models .car{
-    
 }
 
 .fav-list{
     background: radial-gradient(circle, rgba(0, 0, 0, 0.651), white);
-
 }
 
-.achievement-page{
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.651), white);
+/* Achievement Page */
+.parent_ap .banner {
+    background-color: #d3d3d3;
+    text-align: justify;
+    padding-top: 35px;
+    padding-left: 20px;
+    padding-bottom: 25px;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 65px;
+    border-width: 20px;
+    border-style: outset;
+    border-color: #660708;
+}
+.parent_ap .navbar {
+    background-color: #d3d3d3;
+    color: #0b090a;
     font-family: 'Big Shoulders Inline Display', cursive;
-    padding: 1rem;
-    float: center
-    
-    
-
-
-}
-.achievement-page .ach-avatar{
-    width:200px; 
-    height:200px; 
-    position: fixed; 
-    top: 50%; 
-    left: 50%; 
-    margin-top: -100px; 
-    margin-left: 350px; 
+    font-size: 175%;
+    background-color: #d3d3d3;
+    border-width: 20px;
+    border-style: outset;
+    border-color: #660708;
+    margin: 3% 0%;
 }
 
-.last-manu{
-    height: 480px;
+.parent_ap .navbar h3 {
+    font-size: 40px
+}
+
+.parent_ap .stats {
+    background-image: linear-gradient(to right, #d3d3d3, #660708);
+    font-family: 'Big Shoulders Inline Display', cursive;
+}
+
+.parent_ap .stats .avatar img{
+    border-style: inset;
+    border-width: 8px;
+    border-color: #161a1d;
+    margin: 2%;
+    background-color: #ffffff;   
+}
+
+.parent_ap .stats img:hover {
+    background-color: #edf2fb;
+    border-style: outset;
+    border-color: #e5383b;
+    border-radius: 20px;
+    border-width: 3px;
+    transition: .2s;
+}
+
+.parent_ap .stats h3 {
+    margin: 0 2%;
+    font-family: 'Jura', sans-serif;
+    font-size: 40px;
+}
+
+.parent_ap .achievements-banner h1 {
+    font-family: 'Major Mono Display', monospace;
+    border-style: outset;
+    border-width: 20px;
+    border-color: #660708;
+    text-align: center;
+}
+
+.parent_ap .badges .media {
+    margin: 3% 0px;
+}
+
+.parent_ap .badges img {
+    width: 250px;
+    height: 200px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: #161a1d;
+    padding: 0px;
+}
+
+.parent_ap .badges .media-body h3{
+    font-family: 'Major Mono Display', monospace;
+    border-style: outset;
+    border-width: 3px;
+    border-color: #660708;
+    font-size: 40x;
+}
+
+.parent_ap .badges .media-body {
+    font-family: 'Jura', sans-serif;
+    font-size: 25px;
+}
+
+.parent_ap .badges img:hover {
+    width: 250px;
+    height: 200px;
+    background-color: #edf2fb;
+    border-style: outset;
+    border-color: #e5383b;
+    border-radius: 20px;
+    border-width: 3px;
+    transition: .2s;
+}
+
+
+.last-manu {
+    display: flex;
+  justify-content: center;
+    margin-right: 0px;
+    align-items: center;
+    border-radius: 20px;
+   /* height: 480px;
     width: 640px;
-    padding:0rem;
+    padding:0rem; */
     /* background: radial-gradient(circle, black, white); */
+   
 }
 
 .manufacturers1 {
     padding: 1rem;
     background: radial-gradient(circle, black, white);
  
+}
+
+
+.car-show{
+    padding: 1rem;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.651), white)
+    
+}
+
+.car-show{
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.651), white)
+}
+
+.card123-parent .card1 {
+   
+    displaY: block;
+    float: right;
+    width: 33.33%;
+    text-align: left;
+    border-color: #660708;
+    border-style: inset;
+    margin-top: -490px; 
+    margin-right: 200px;
+    color: black;
+}
+
+.card123-parent .card2 {
+    displaY: block;
+    float: right;
+    width: 33.33%;
+    text-align: left;
+    border-color: #660708;
+    border-style: inset;
+    margin-top: -290px; 
+    margin-right: 200px;
+    
+
+}
+
+.card123-parent .card3 {
+    displaY: block;
+    float: right;
+    width: 33.33%;
+    text-align: left;
+    border-color: #660708;
+    border-style: inset;
+    margin-top: -140px; 
+    margin-right: 200px;
+  
+    
+    
+}
+
+.card123-parent .card-subtitle-rating{
+    color: black;
+}
+
+.card123-parent .card-title{
+
+   color: black;
+
+}
+
+.car-review-show{
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.651), white)
+}
+
+
+.review-show-page{
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.651), white)
+}
+
+.user-review-page{
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.651), white)
 }
