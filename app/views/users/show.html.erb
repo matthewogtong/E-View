@@ -17,12 +17,14 @@
       <a class="nav-link" <%= link_to 'Delete Account', delete_user_path(@current_user) %></a>
     </nav>
   </div>
-  <div class="username"> 
-    <h4>username: <span class="badge badge-secondary"><%= @user.username.downcase %></span></h4>
-    <h4>age: <span class="badge badge-secondary"><%= @user.age %></span></h4>
-  </div>
-  <div class="avatar"> 
-    <img src=<%= @user.img_url %> alt="avatar">
+  <div class="user-avatar-block">
+    <div class="username"> 
+      <h4>username: <span class="badge badge-secondary"><%= @user.username.downcase %></span></h4>
+      <h4>age: <span class="badge badge-secondary"><%= @user.age %></span></h4>
+    </div>
+    <div class="avatar"> 
+      <img src=<%= @user.img_url %> alt="avatar">
+    </div>
   </div>
   <div class="three_reviews"> 
     <h1>your recent reviews <span class="badge badge-secondary"></span></h1>

@@ -1,3 +1,5 @@
+<div class="parent_profile_page">
+
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4">Here's A List Of All Your Reviews</h1>
@@ -17,7 +19,9 @@
 <div class="user-review-page">
 <ul>
     <% @reviews.each do |review| %>
-       <li> <h5> <%= link_to 'View this Review', review_path(review.id) %> </h5>
+    <div class="user-review-page-body">
+        <h5> <%= link_to 'View this Review', review_path(review.id) %> </h5>
+        
         <br>
         <b>Car:</b> <%= review.car.make%>
         <%= review.car.model %>
@@ -31,7 +35,9 @@
         <br>
         <br>
         <br>
+      </div>
     <% end %>
 </ul>
 
+</div>
 </div>

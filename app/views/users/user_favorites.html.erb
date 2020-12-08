@@ -16,26 +16,17 @@
       <a class="nav-link" <%= link_to 'Delete Account', delete_user_path(@current_user) %></a>
     </nav>
   </div>
-  <div class="fav-list">   
-      <br>
-      <br>
-  <ul>
-      <% @user.favorites.each do |f| %>
-        
-        <img src=<%= f.car.image %>
-        width= "400";
-        height= "235"><br>
-        <br>
-        <li>
-          <%= f.car.make  %> <br>
-          <%= f.car.model %>
+  <div class="fp-background-pic">
+    <div class="fav-list"> <br><br>
+        <% @user.favorites.each do |f| %>
+          <img src=<%= f.car.image %>><br>
+          <a class="nav-link" <%= link_to f.car.make_plus_model, car_path(f) %></a>
+          <p><%= f.car.description %></p>
           <br>
+          <hr>
           <br>
-          <br>
-          </li>
-      <% end %>
-  </ul>
-   
+        <% end %>
+    </div>
   </div>
 </div>
 

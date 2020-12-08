@@ -1,3 +1,4 @@
+<div class="parent_profile_page">
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4">All Reviews for <%= @car.make_plus_model %> </h1>
@@ -5,22 +6,38 @@
     </div>
   </div>
 
-<div class= "car-review-show">
-
+  <div class="navbar"> 
+    <h3></h3>
+    <nav class="nav">
+      <a class="nav-link" <%= link_to 'Home', home_main_path(@current_user) %></a>
+      <a class="nav-link" <%= link_to 'Return to Car Show Page', car_path(@car) %></a>
+      <a class="nav-link" <%= link_to 'Profile Page', user_path(@current_user) %></a>
+      <a class="nav-link active" <%= link_to "Log Out", logout_path, method: :delete %> <span class="sr-only">(current)</span></a>
+    </nav>
+  </div>
+  <div class= "car-review-show">
 
 <% @car.reviews.each do |review| %>
-    <li>
-    <%= link_to 'View this Review', review_path(review.id) %>
+  
+
+<div class= "car-review-show1">
+    <%= button_to 'View this Review', review_path(review.id), method: 'get'%>
     <br><b>Review Content: </b><%= review.content %>
     <br><b>Rating: </b><%= review.rating %>
     <br><b>Number of Likes: </b><%= review.likes %>
     <br><b>Author: </b><%= review.user.name %>
-    </li>
+    
+ 
+  
     <br>
     <br>
+  </div>
 <% end %>
-
-<%= link_to 'Return to Car Show Page', car_path(@car) %>
 
 
 </div>
+</div>
+
+
+
+

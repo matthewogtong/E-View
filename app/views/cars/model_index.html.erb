@@ -1,3 +1,5 @@
+<div class="parent_profile_page">
+
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Models</h1>
@@ -20,11 +22,10 @@
   <h2>
     <ul>
       <% @cars.each do |car| %>
-      <img src=<%= car.image %>
-      width="400" 
-      height="235">
-        <li class="car"> <%= link_to car.model, car_path(car)%></li><br>
+      <img src=<%= car.image %>>
+        <div class="car"> <%= link_to car.model, car_path(car)%></div ><br>
        <% end %>
     </ul>
   </h2>
+</div>
 </div>

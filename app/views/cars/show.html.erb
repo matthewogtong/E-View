@@ -1,3 +1,5 @@
+
+<div class="parent_profile_page">
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4">Car Show Page</h1>
@@ -5,7 +7,7 @@
     </div>
   </div>
 
-
+<div class= "car-show-nav">
   <div class="navbar"> 
     <h3></h3>
     <nav class="nav">
@@ -15,31 +17,34 @@
       <a class="nav-link" <%= link_to "Log Out", logout_path, method: :delete %></a>
     </nav>
   </div>
+</div>
 
 </b>
 
 <div class="car-show">
 
 <!--  Car Make + Model --->
-<h5><b>Car: </b>
+<h2><b>Car: </b></h2>
 
-<%= @car.make %>
-<%= @car.model %>
+<h3><%= @car.make %>
+<%= @car.model %></h3>
 
-<b><br> Description:</b>
-<%= @car.description %> </h5>
+<h4><b><br> Description:</b>
+<%= @car.description %> </h4>
 <br>
 <br>
 <!-- Car Image-->
 <img src= <%= @car.image %> 
        width="400" 
        height="235" >
+       <br>
+       <br>
 
 <!-- Average Rating-->
 <% if @car.reviews.count > 0 %>
     <h4>Average Rating: <%= @car.rating.round(2) %></h4>
   <% else %>
-    <%= 'There are no reviews for this car yet' %>
+    <h4><%= 'There are no reviews for this car yet' %></h4>
 <% end %>
 
 <!-- Car Description-->
@@ -62,6 +67,8 @@
 </b>
 
 </div>
+</div>
+
 
 
 

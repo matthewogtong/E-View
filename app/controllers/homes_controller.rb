@@ -6,5 +6,6 @@ class HomesController < ApplicationController
         @porsche_taycan = Car.find_by(make: 'Porsche', model: 'Taycan')
         @audi_etron = Car.find_by(make: 'Audi', model: 'E-Tron')
         @kia_soul= Car.find_by(make: 'Kia', model: 'Soul')
+        @kona = Car.find(5)
     end
 end 
